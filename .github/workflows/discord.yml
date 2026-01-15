@@ -1,0 +1,147 @@
+name: 🚀 Benachrichtigung an Discord mit Embed
+
+on: push
+
+
+
+jobs:
+  notify-discord:
+    runs-on: ubuntu-latest
+    env:
+      DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+
+    steps:
+      - name: Checkout code (full history for parent detection)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Sende formatiertes Embed an Discord
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          AUTHOR_NAME="${{ github.actor }}"
+          AVATAR_URL="https://github.com/${AUTHOR_NAME}.png"
+          REPO="${{ github.repository }}"
+          BRANCH="${GITHUB_REF##*/}"
+          HEAD_SHA="${GITHUB_SHA}"
+
+          # Head-Commit (vom Push-Event)
+          COMMIT_MSG_RAW="${{ github.event.head_commit.message }}"
+          COMMIT_MSG_ESCAPED="$(echo "$COMMIT_MSG_RAW" | sed 's/"/\\"/g' | head -n 1)"
+          COMMIT_URL="${{ github.event.head_commit.url }}"
+
+          # --- Echten Merge-Commit erkennen (Anzahl Eltern > 1) ---
+          PARENTS="$(git show -s --format=%P "$HEAD_SHA" || true)"
+          NPARENTS="$(wc -w <<< "$PARENTS" | tr -d ' ')"
+          IS_MERGE=0
+          if [ "${NPARENTS:-0}" -gt 1 ]; then
+            IS_MERGE=1
+          fi
+
+          # --- Nachrichten vorbereiten ---
+          DISPLAY_MSG="$COMMIT_MSG_ESCAPED"   # Erstes Feld (immer)
+          SECOND_MSG_RAW=""
+          SECOND_MSG_ESCAPED=""
+
+          if [ "$IS_MERGE" -eq 1 ]; then
+            # Nachricht des gemergten Zweigs (zweiter Parent) bevorzugen
+            SECOND_SHA="$(git rev-parse "${HEAD_SHA}^2" 2>/dev/null || true)"
+            if [ -n "$SECOND_SHA" ]; then
+              SECOND_MSG_RAW="$(git log -1 --pretty=%s "$SECOND_SHA" 2>/dev/null || true)"
+            fi
+            # Fallback: vorheriger Commit auf dem 1.-Parent-Pfad
+            if [ -z "$SECOND_MSG_RAW" ]; then
+              SECOND_MSG_RAW="$(git log --pretty=%s -n 2 | tail -n 1 || true)"
+            fi
+            SECOND_MSG_ESCAPED="$(echo "$SECOND_MSG_RAW" | sed 's/"/\\"/g')"
+          fi
+
+          # --- Ticket-Erkennung (z.B. 29196-320) ---
+          TASK_ID=""
+          PART_NUM=""
+
+          extract_ticket () {
+            local text="${1:-}"
+            if [[ "$text" =~ ([0-9]+)-([0-9]+) ]]; then
+              TASK_ID="${BASH_REMATCH[1]}"
+              PART_NUM="${BASH_REMATCH[2]}"
+              return 0
+            fi
+            return 1
+          }
+
+          if [ "$IS_MERGE" -eq 0 ]; then
+            # Normaler Push: strikt Head-Commit priorisieren
+            extract_ticket "$COMMIT_MSG_RAW" \
+              || extract_ticket "$COMMIT_MSG_ESCAPED" \
+              || extract_ticket "$(git log -n 5 --pretty=format:%s || true)"
+          else
+            # Merge: erst Head-Commit, dann gemergter Zweig, dann Verlauf
+            extract_ticket "$COMMIT_MSG_RAW" \
+              || extract_ticket "$SECOND_MSG_RAW" \
+              || extract_ticket "$(git log -n 10 --pretty=format:%s || true)"
+          fi
+
+          # --- Ticket fett hervorheben (Markdown **…**) ---
+          DISPLAY_OUT="$DISPLAY_MSG"
+          SECOND_OUT="$SECOND_MSG_ESCAPED"
+          if [ -n "$TASK_ID" ] && [ -n "$PART_NUM" ]; then
+            PATTERN="${TASK_ID}-${PART_NUM}"
+            BOLD="**${TASK_ID}-${PART_NUM}**"
+            # erste Vorkommen ersetzen
+            DISPLAY_OUT="${DISPLAY_OUT/$PATTERN/$BOLD}"
+            SECOND_OUT="${SECOND_OUT/$PATTERN/$BOLD}"
+          fi
+
+          # --- Felder zusammenstellen ---
+          SECOND_FIELD=""
+          if [ "$IS_MERGE" -eq 1 ] && [ -n "$SECOND_OUT" ]; then
+            SECOND_FIELD=", { \"name\": \"Letzter Commit (gemergter Zweig)\", \"value\": \"$SECOND_OUT\" }"
+          fi
+
+          # Ticket-Link-Feld
+          if [ -n "$TASK_ID" ] && [ -n "$PART_NUM" ]; then
+            TICKET_URL="https://ticket.webthinker.de/projects/${PART_NUM}?modal=Task-${TASK_ID}-${PART_NUM}"
+            VIEW_TICKET_FIELD=", { \"name\": \"Ticket anzeigen\", \"value\": \"[Hier klicken](${TICKET_URL})\" }"
+          else
+            VIEW_TICKET_FIELD=""
+          fi
+
+          # --- Event-Typ & Farbe ---
+          if [ "$IS_MERGE" -eq 1 ]; then
+            if echo "$COMMIT_MSG_RAW" | grep -iq "Merge pull request"; then
+              EVENT_TYPE="Pull Request zusammengeführt"
+              COLOR=10181046   # graublau
+            else
+              EVENT_TYPE="Merge-Commit"
+              COLOR=15105570   # orange
+            fi
+          else
+            EVENT_TYPE="Neuer Push"
+            COLOR=3447003     # blau
+          fi
+
+          # --- Deutsches Datum/Zeit ---
+          DATE_DE=$(TZ='Europe/Berlin' date +'%d.%m.%Y %H:%M:%S')
+
+          echo "Sende Discord Webhook..."
+
+          curl -s -o response.txt -w "%{http_code}" -H "Content-Type: application/json" \
+          -X POST -d "{
+            \"embeds\": [{
+              \"title\": \"$EVENT_TYPE ins Repository $REPO\",
+              \"description\": \"**$AUTHOR_NAME** hat in den Branch \`$BRANCH\` gepusht\",
+              \"color\": $COLOR,
+              \"fields\": [
+                { \"name\": \"Commit-Nachricht\", \"value\": \"$DISPLAY_OUT\" }
+                ${SECOND_FIELD},
+                { \"name\": \"Commit ansehen\", \"value\": \"[Hier klicken]($COMMIT_URL)\" }
+                ${VIEW_TICKET_FIELD}
+              ],
+              \"thumbnail\": { \"url\": \"$AVATAR_URL\" },
+              \"footer\": { \"text\": \"GitHub Action • ${DATE_DE}\" }
+            }]
+          }" "$DISCORD_WEBHOOK"
+          

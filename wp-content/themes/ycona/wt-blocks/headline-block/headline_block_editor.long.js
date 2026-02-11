@@ -50,6 +50,10 @@
                 type: 'string'
             },
 
+            text_color: {
+                type: 'string'
+            },
+
             space_bottom: {
                 type: 'string',
             },
@@ -148,17 +152,13 @@
             function update_text_color (newValue) {
                 props.setAttributes( { text_color: newValue } );
             }
-
-
-
-
             function update_space_bottom (newValue) {
                 props.setAttributes( { space_bottom: newValue } )
             }
-
             function update_space_top (newValue) {
                 props.setAttributes( { space_top: newValue } )
             }
+
 
 
             return (
@@ -166,9 +166,7 @@
                     el(InspectorControls, {class: "ycona-SelectControl"},
 
                         el("div", { class: "webthiker-block-sidebar-element" },
-
-
-
+                            
                             el("strong", null, "Überschriftentyp"),
                             el(SelectControl,
                                 {

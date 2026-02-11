@@ -1,0 +1,30 @@
+/**
+ * Video block — frontend styles.
+ * Wraps .video-player (custom-video-player.css) with optional title.
+ */
+.video-block {
+  margin-bottom: 1.5rem;
+}
+
+.video-block__title {
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.video-block--no-src .video-block__empty {
+  padding: 1rem;
+  background: #f0f0f0;
+  color: #666;
+  border-radius: 4px;
+}
+
+.video-block .video-player {
+  max-width: 100%;
+
+}
+
+/* When explicit height is set via inline style, make the video fill it */
+.video-block .video-player[style*="height"] video {
+  height: 100%;
+  object-fit: contain;
+}

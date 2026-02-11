@@ -24,10 +24,6 @@ function wt_headline_block_rc($attributes, $content) {
     // vars
     $uniq_id                    = uniqid();
     $headline                   = $attributes["headline"] ?? "";
-//		            echo '<pre>';
-//		        echo print_r($attributes);
-//		        echo '</pre>';
-	
     $headline_hml               = "";
 	$description_html           = "";
     $class_name                 = $attributes["class_name"] ?? "";

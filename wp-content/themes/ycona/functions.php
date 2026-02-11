@@ -36,6 +36,10 @@
 
         wp_enqueue_script("js-main", $theme_path . "/assets/js/functions.min.js", array("jquery"), "1.0", true);
 
+        // Custom video player (no native controls)
+        wp_enqueue_style("custom-video-player", $theme_path . "/assets/video-player/custom-video-player.css", array(), _S_VERSION);
+        wp_enqueue_script("custom-video-player", $theme_path . "/assets/video-player/custom-video-player.min.js", array(), _S_VERSION, true);
+
         // Dynamic JS file
         $custom_js_file = get_stylesheet_directory() . '/assets/custom-js-css/custom-scripts.js';
         if (file_exists($custom_js_file)) {
@@ -374,6 +378,7 @@
             array("name" => "accordion_block", "block-name" => "accordion-block", "deps" => array("wp-block-editor","wp-blocks","wp-element","wp-data")),
             array("name" => "testimonials_block", "block-name" => "testimonials-block", "deps" => array("wp-block-editor","wp-blocks","wp-element","wp-data")),
             array("name" => "headline_block", "block-name" => "headline-block", "deps" => array("wp-block-editor","wp-blocks","wp-element","wp-data")),
+            array("name" => "video_block", "block-name" => "video-block", "deps" => array("wp-block-editor","wp-blocks","wp-element","wp-data")),
       );
 
         // iterate blocks
@@ -473,6 +478,198 @@
 
         return $post_id;
     }
+
+
+    /**
+     * [custom_video] shortcode — outputs the same player markup as wt/video-block.
+     *
+     * Attributes:
+     *   src              (required) — video URL
+     *   poster           (optional) — poster image URL
+     *   preload          (optional) — preload strategy (default: metadata)
+     *   title            (optional) — heading above the player
+     *   skin             (optional) — skin class: ocean | cinema | minimal
+     *   width            (optional) — CSS width  (e.g. 800px, 100%, 50vw)
+     *   height           (optional) — CSS height (e.g. 450px, auto)
+     *   class            (optional) — extra CSS classes on the wrapper
+     *   subtitle_1       (optional) — URL to first subtitle file (.vtt)
+     *   subtitle_1_lang  (optional) — language code for first subtitle (default: en)
+     *   subtitle_1_label (optional) — display label for first subtitle (default: English)
+     *   subtitle_2       (optional) — URL to second subtitle file (.vtt)
+     *   subtitle_2_lang  (optional) — language code for second subtitle
+     *   subtitle_2_label (optional) — display label for second subtitle
+     *   subtitle_3       (optional) — URL to third subtitle file (.vtt)
+     *   subtitle_3_lang  (optional) — language code for third subtitle
+     *   subtitle_3_label (optional) — display label for third subtitle
+     *   audio_1          (optional) — URL to first audio track (.mp3, .ogg, .aac, etc.)
+     *   audio_1_lang     (optional) — language code for first audio track
+     *   audio_1_label    (optional) — display label for first audio track
+     *   audio_2          (optional) — URL to second audio track
+     *   audio_2_lang     (optional) — language code for second audio track
+     *   audio_2_label    (optional) — display label for second audio track
+     *   audio_3          (optional) — URL to third audio track
+     *   audio_3_lang     (optional) — language code for third audio track
+     *   audio_3_label    (optional) — display label for third audio track
+     */
+    function ycona_custom_video_shortcode( $atts ) {
+        $atts = shortcode_atts( array(
+            'src'              => '',
+            'poster'           => '',
+            'preload'          => 'metadata',
+            'title'            => '',
+            'skin'             => '',
+            'width'            => '',
+            'height'           => '',
+            'class'            => '',
+            'subtitle_1'       => '',
+            'subtitle_1_lang'  => 'en',
+            'subtitle_1_label' => 'English',
+            'subtitle_2'       => '',
+            'subtitle_2_lang'  => '',
+            'subtitle_2_label' => '',
+            'subtitle_3'       => '',
+            'subtitle_3_lang'  => '',
+            'subtitle_3_label' => '',
+            'audio_1'          => '',
+            'audio_1_lang'     => '',
+            'audio_1_label'    => '',
+            'audio_2'          => '',
+            'audio_2_lang'     => '',
+            'audio_2_label'    => '',
+            'audio_3'          => '',
+            'audio_3_lang'     => '',
+            'audio_3_label'    => '',
+        ), $atts, 'custom_video' );
+
+        if ( empty( $atts['src'] ) ) {
+            return '<p class="video-block__empty">' . esc_html__( 'Please provide a video URL (src).', 'ycona' ) . '</p>';
+        }
+
+        // Enqueue player assets (same as video block)
+        global $theme_path;
+        wp_enqueue_style( 'custom-video-player', $theme_path . '/assets/video-player/custom-video-player.css', array(), _S_VERSION );
+        wp_enqueue_script( 'custom-video-player', $theme_path . '/assets/video-player/custom-video-player.min.js', array(), _S_VERSION, true );
+
+        // Build attributes
+        $poster_attr = ! empty( $atts['poster'] ) ? ' poster="' . esc_url( $atts['poster'] ) . '"' : '';
+        $title_attr  = ! empty( $atts['title'] )  ? ' title="' . esc_attr( $atts['title'] ) . '"' : '';
+
+        $skin_class  = ! empty( $atts['skin'] )  ? ' video-player--skin-' . sanitize_html_class( $atts['skin'] ) : '';
+        $extra_class = ! empty( $atts['class'] ) ? ' ' . esc_attr( $atts['class'] ) : '';
+
+        // Width & height — accept any CSS value (px, %, vw, auto, etc.)
+        $dimension_styles = '';
+        if ( ! empty( $atts['width'] ) ) {
+            $dimension_styles .= 'width:' . esc_attr( trim( $atts['width'] ) ) . ';';
+        }
+        if ( ! empty( $atts['height'] ) ) {
+            $dimension_styles .= 'height:' . esc_attr( trim( $atts['height'] ) ) . ';';
+        }
+        $style_attr = $dimension_styles !== '' ? ' style="' . $dimension_styles . '"' : '';
+
+        $title_html  = ! empty( $atts['title'] ) ? '<h2 class="video-block__title">' . esc_html( $atts['title'] ) . '</h2>' : '';
+
+        // Build subtitle <track> elements (up to 3)
+        $track_html = '';
+        for ( $i = 1; $i <= 3; $i++ ) {
+            $sub_url   = $atts[ 'subtitle_' . $i ];
+            $sub_lang  = $atts[ 'subtitle_' . $i . '_lang' ];
+            $sub_label = $atts[ 'subtitle_' . $i . '_label' ];
+
+            if ( ! empty( $sub_url ) ) {
+                $sub_lang  = ! empty( $sub_lang )  ? $sub_lang  : 'en';
+                $sub_label = ! empty( $sub_label ) ? $sub_label : 'Subtitles ' . $i;
+                $track_html .= '<track kind="subtitles" src="' . esc_url( $sub_url ) . '" srclang="' . esc_attr( $sub_lang ) . '" label="' . esc_attr( $sub_label ) . '">';
+            }
+        }
+        $crossorigin_attr = ! empty( $track_html ) ? ' crossorigin="anonymous"' : '';
+
+        // Build audio tracks data attribute (up to 3)
+        $audio_tracks_data = array();
+        for ( $i = 1; $i <= 3; $i++ ) {
+            $a_url   = $atts[ 'audio_' . $i ];
+            $a_lang  = $atts[ 'audio_' . $i . '_lang' ];
+            $a_label = $atts[ 'audio_' . $i . '_label' ];
+
+            if ( ! empty( $a_url ) ) {
+                $audio_tracks_data[] = array(
+                    'url'   => esc_url( $a_url ),
+                    'label' => ! empty( $a_label ) ? $a_label : 'Audio ' . $i,
+                    'lang'  => ! empty( $a_lang )  ? $a_lang  : '',
+                );
+            }
+        }
+        $audio_tracks_attr = '';
+        if ( ! empty( $audio_tracks_data ) ) {
+            $audio_tracks_attr = " data-audio-tracks='" . wp_json_encode( $audio_tracks_data ) . "'";
+        }
+
+        $markup = '<section class="video-block container">' . $title_html . '
+        <div class="video-player video-player--skeleton' . $skin_class . $extra_class . '" data-player' . $style_attr . $audio_tracks_attr . '>
+
+            <div class="vp-skeleton" aria-hidden="true">
+                <div class="vp-skeleton__shimmer"></div>
+                <div class="vp-skeleton__play"></div>
+                <div class="vp-skeleton__controls">
+                    <div class="vp-skeleton__btn"></div>
+                    <div class="vp-skeleton__bar"></div>
+                    <div class="vp-skeleton__time"></div>
+                    <div class="vp-skeleton__btn"></div>
+                    <div class="vp-skeleton__btn-sm"></div>
+                    <div class="vp-skeleton__btn"></div>
+                </div>
+            </div>
+
+            <video src="' . esc_url( $atts['src'] ) . '" preload="' . esc_attr( $atts['preload'] ) . '" playsinline' . $poster_attr . $title_attr . $crossorigin_attr . '>' . $track_html . '</video>
+
+            <div class="video-player-play-overlay" data-play-overlay aria-label="' . esc_attr__( 'Play Video', 'ycona' ) . '">
+                <i class="bi bi-play-fill" aria-hidden="true"></i>
+            </div>
+
+            <div class="video-player-captions" data-captions aria-live="polite" aria-atomic="true"></div>
+
+            <div class="video-player-controls" data-controls>
+                <button type="button" class="video-player-btn" data-play aria-label="' . esc_attr__( 'Play', 'ycona' ) . '">
+                    <i class="bi bi-play-fill" aria-hidden="true"></i>
+                    <i class="bi bi-pause-fill" aria-hidden="true"></i>
+                    <span class="sr-only">' . esc_html__( 'Play / Pause', 'ycona' ) . '</span>
+                </button>
+                <div class="video-player-progress-wrap" data-progress-wrap>
+                    <input type="range" class="video-player-progress" data-progress min="0" max="100" value="0" step="0.1" aria-label="' . esc_attr__( 'Seek', 'ycona' ) . '">
+                </div>
+                <span class="video-player-time" data-time aria-live="off">0:00</span>
+                <button type="button" class="video-player-btn" data-mute aria-label="' . esc_attr__( 'Mute', 'ycona' ) . '">
+                    <i class="bi bi-volume-up-fill" aria-hidden="true"></i>
+                    <i class="bi bi-volume-mute-fill" aria-hidden="true"></i>
+                    <span class="sr-only">' . esc_html__( 'Mute / Unmute', 'ycona' ) . '</span>
+                </button>
+                <input type="range" class="video-player-volume" data-volume min="0" max="100" value="100" step="1" aria-label="' . esc_attr__( 'Volume', 'ycona' ) . '">
+                <button type="button" class="video-player-btn" data-cc aria-label="' . esc_attr__( 'Captions', 'ycona' ) . '">
+                    <span>CC</span>
+                    <span class="sr-only">' . esc_html__( 'Toggle Captions', 'ycona' ) . '</span>
+                </button>
+                <button type="button" class="video-player-btn" data-quality aria-label="' . esc_attr__( 'Quality', 'ycona' ) . '" style="display:none">
+                    <i class="bi bi-gear-fill" aria-hidden="true"></i>
+                    <span class="vp-quality-label">AUTO</span>
+                </button>
+                <button type="button" class="video-player-btn" data-fullscreen aria-label="' . esc_attr__( 'Fullscreen', 'ycona' ) . '">
+                    <i class="bi bi-fullscreen" aria-hidden="true"></i>
+                    <i class="bi bi-fullscreen-exit" aria-hidden="true"></i>
+                    <span class="sr-only">' . esc_html__( 'Toggle Fullscreen', 'ycona' ) . '</span>
+                </button>
+            </div>
+
+            <div class="video-player-loading" data-loading aria-hidden="true" role="status">
+                <span class="sr-only">' . esc_html__( 'Loading...', 'ycona' ) . '</span>
+            </div>
+
+            <div class="video-player-error" data-error aria-live="assertive" hidden></div>
+        </div>
+    </section>';
+
+        return $markup;
+    }
+    add_shortcode( 'custom_video', 'ycona_custom_video_shortcode' );
 
 
     // include ycona utilities

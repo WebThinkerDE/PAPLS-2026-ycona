@@ -4,80 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22292b75-0460-4684-abad-fcbec4e43d39" name="Changes" comment="feat: custom video player und gutenberg block (34030-339)">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/custom-video-player-plan.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/assets/img/vectors/closeMenu.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/assets/img/vectors/fb.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/assets/img/vectors/ig.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/assets/img/vectors/linkedin.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/assets/img/vectors/openMenu.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/assets/video-player/custom-video-player.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/assets/video-player/custom-video-player.long.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/assets/video-player/custom-video-player.long.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/assets/video-player/custom-video-player.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/audio/bg.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/audio/cs.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/audio/de.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/audio/de.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/audio/en.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/audio/en.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/audio/es.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/audio/fr.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/audio/hr.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/audio/it.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/audio/pl.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/audio/pt-pt.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/audio/ru.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/audio/tr.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/audio/uk.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/description.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/subtitle/bg.vtt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/subtitle/cs.vtt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/subtitle/de.vtt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/subtitle/en.vtt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/subtitle/es.vtt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/subtitle/fr.vtt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/subtitle/hr.vtt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/subtitle/it.vtt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/subtitle/pl.vtt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/subtitle/pt-pt.vtt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/subtitle/pt.vtt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/subtitle/ru.vtt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/subtitle/tr.vtt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/subtitle/uk.vtt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/testfragen/bg.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/testfragen/cs.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/testfragen/de.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/testfragen/en.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/testfragen/es.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/testfragen/fr.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/testfragen/hr.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/testfragen/it.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/testfragen/pl.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/testfragen/pt.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/testfragen/ru.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/testfragen/tr.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/testfragen/uk.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/thumbnail.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video-parts/vid.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video_block.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video_block.long.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video_block.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video_block_editor.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video_block_editor.long.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video_block_editor.long.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/video-block/video_block_editor.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+    <list default="true" id="22292b75-0460-4684-abad-fcbec4e43d39" name="Changes" comment="feat: cards block (34030-339)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/ycona/assets/js/backend.long.js" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/ycona/assets/js/backend.long.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/ycona/assets/js/backend.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/ycona/assets/js/backend.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/ycona/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/ycona/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/headline-block/headline_block.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/headline-block/headline_block.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/headline-block/headline_block_editor.long.js" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/headline-block/headline_block_editor.long.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/headline-block/headline_block_editor.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-blocks/headline-block/headline_block_editor.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/ycona/wt-cpt.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-cpt.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/ycona/wt-cpt/accordion.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-cpt/accordion.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/ycona/wt-cpt/testimonials.php" beforeDir="false" afterPath="$PROJECT_DIR$/wp-content/themes/ycona/wt-cpt/testimonials.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,6 +91,7 @@
       <workItem from="1768487035145" duration="10000" />
       <workItem from="1770712588938" duration="12485000" />
       <workItem from="1770797828205" duration="352000" />
+      <workItem from="1770814820631" duration="6242000" />
     </task>
     <task id="LOCAL-00001" summary="feat: theme steup (33260-339)">
       <option name="closed" value="true" />

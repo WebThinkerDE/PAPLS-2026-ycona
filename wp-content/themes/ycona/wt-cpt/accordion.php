@@ -105,7 +105,11 @@ function show_accordion_custom_fields() {
 
         jQuery(document).ready(function() {
 
-            jQuery(".add").click(function() {
+            jQuery("#wt-wrapper-accordion + .add").click(function() {
+
+                var $addBtn = jQuery(this);
+                var $wrapper = $addBtn.prev(".wt-wrapper-cpt");
+                $addBtn.hide();
 
                 let count = getExistingElements(".accordion");
 
@@ -166,31 +170,33 @@ function show_accordion_custom_fields() {
             </div>`;
 
 
-                jQuery('#wt-wrapper-accordion').append(accordionHTML);
+                $wrapper.append(accordionHTML);
 
                 let target = "<?php echo admin_url('admin-ajax.php'); ?>";
 
-                let createWpEditor = function(editor_id, editor_name) {
+                let createWpEditor = function(editor_id, editor_name, $addBtn) {
                     let data_text = {
                         'action': 'wt_get_text_editor',
                         'text_editor_id': editor_id,
                         'textarea_name': editor_name
                     }
 
-                    jQuery.post(target, data_text, function (response) {
-                        let cont = "span#box-" + count + "-" + editor_id;
-                        jQuery(cont).append(response);
-                        tinymce.execCommand('mceAddEditor', false, editor_id);
-                        quicktags({id: editor_id});
-
-                        jQuery(".add").show();
-                    });
+                    jQuery.post(target, data_text)
+                        .done(function (response) {
+                            let cont = "span#box-" + count + "-" + editor_id;
+                            jQuery(cont).append(response);
+                            if (typeof tinymce !== "undefined") tinymce.execCommand('mceAddEditor', false, editor_id);
+                            if (typeof quicktags !== "undefined") quicktags({id: editor_id});
+                        })
+                        .always(function() {
+                            $addBtn.show();
+                        });
                 }
 
                 // Content Editor
                 let content_id = "accordion_fields_" + count + "_content";
                 let content_name = "accordion_fields[accordions][" + count + "][content]";
-                createWpEditor(content_id, content_name);
+                createWpEditor(content_id, content_name, $addBtn);
 
                 setButtons();
                 resetSort();
@@ -199,23 +205,6 @@ function show_accordion_custom_fields() {
 
             setButtons();
         });
-
-        // Init sort buttons
-        function setButtons(){
-            jQuery('button').show();
-            jQuery('.accordion button.sort-up').first().hide();
-            jQuery('.accordion button.sort-down').last().hide();
-        }
-
-        // sort Buttons order
-        function resetSort(){
-            var i=0;
-            jQuery('.accordion').each(function(){
-                jQuery(this).attr("data-sort", i);
-                i++;
-            });
-        }
-
     </script>
 <?php }
 /* END - Custom Post Type - Accordion */

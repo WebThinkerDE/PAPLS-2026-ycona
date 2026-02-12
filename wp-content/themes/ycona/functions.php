@@ -379,6 +379,7 @@
             array("name" => "testimonials_block", "block-name" => "testimonials-block", "deps" => array("wp-block-editor","wp-blocks","wp-element","wp-data")),
             array("name" => "headline_block", "block-name" => "headline-block", "deps" => array("wp-block-editor","wp-blocks","wp-element","wp-data")),
             array("name" => "video_block", "block-name" => "video-block", "deps" => array("wp-block-editor","wp-blocks","wp-element","wp-data")),
+            array("name" => "cards_block", "block-name" => "cards-block", "deps" => array("wp-block-editor","wp-blocks","wp-element","wp-data")),
       );
 
         // iterate blocks
@@ -679,6 +680,7 @@
     include_once("wt-cpt.php");
     require_once(get_stylesheet_directory() . '/wt-cpt/accordion.php');
 	require_once(get_stylesheet_directory() . '/wt-cpt/testimonials.php');
+	require_once(get_stylesheet_directory() . '/wt-cpt/cards.php');
 
     // load theme options
     require_once(get_stylesheet_directory() . '/theme-options.php');

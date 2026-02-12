@@ -150,4 +150,83 @@
 	}
 	add_action( 'save_post', 'save_custom_post_testimonials_metas' );
 	/* END - Add Custom Post Type - Testimonials */
+
+	/* Add Custom Post Type - Cards */
+	function add_custom_post_type_cards() {
+		
+		$labels = array(
+			'name' => _x( 'Cards', 'Post Type General Name', 'ycona' ),
+			'singular_name' => _x( 'Card', 'Post Type Singular Name', 'ycona' ),
+			'menu_name' => __( 'Cards', 'ycona' ),
+			'name_admin_bar' => __( 'Cards', 'ycona' ),
+			'archives' => __( 'Cards Archives', 'ycona' ),
+			'attributes' => __( 'Cards Attributes', 'ycona' ),
+			'parent_item_colon' => __( 'Parent Card:', 'ycona' ),
+			'all_items' => __( 'All Cards', 'ycona' ),
+			'add_new_item' => __( 'Add New Card', 'ycona' ),
+			'add_new' => __( 'Add New', 'ycona' ),
+			'new_item' => __( 'New Card', 'ycona' ),
+			'edit_item' => __( 'Edit Card', 'ycona' ),
+			'update_item' => __( 'Update Card', 'ycona' ),
+			'view_item' => __( 'View Card', 'ycona' ),
+			'view_items' => __( 'View Cards', 'ycona' ),
+			'search_items' => __( 'Search Cards', 'ycona' ),
+			'not_found' => __( 'Not found', 'ycona' ),
+			'not_found_in_trash' => __( 'Not found in Trash', 'ycona' ),
+			'featured_image' => __( 'Card Image', 'ycona' ),
+			'set_featured_image' => __( 'Set Card image', 'ycona' ),
+			'remove_featured_image' => __( 'Remove Card image', 'ycona' ),
+			'use_featured_image' => __( 'Use as Card image', 'ycona' ),
+			'insert_into_item' => __( 'Insert into Card', 'ycona' ),
+			'uploaded_to_this_item' => __( 'Uploaded to this Card', 'ycona' ),
+			'items_list' => __( 'Cards list', 'ycona' ),
+			'items_list_navigation' => __( 'Cards list navigation', 'ycona' ),
+			'filter_items_list' => __( 'Filter Cards list', 'ycona' ),
+		);
+		
+		$args = array(
+			'label' => __( 'Cards', 'ycona' ),
+			'description' => __( 'Cards', 'ycona' ),
+			'labels' => $labels,
+			'supports' => array( 'title' ),
+			'public' => true,
+			'show_in_rest' => true,
+			'show_ui' => true,
+			'menu_position' => 40,
+			'menu_icon' => 'dashicons-index-card',
+			'has_archive' => true,
+			'exclude_from_search' => true,
+			'publicly_queryable' => false,
+			'show_in_nav_menus' => false,
+		);
+		
+		register_post_type( 'Cards', $args );
+	}
+	add_action("init", "add_custom_post_type_cards");
+	
+	// add HTML for Cards CPT
+	function add_cards_meta_box() {
+		
+		$text = __( 'Cards information', 'ycona' );
+		
+		add_meta_box(
+			'cards_fields_meta_box',
+			$text,
+			'show_cards_custom_fields',
+			'Cards'
+		);
+	}
+	add_action( 'add_meta_boxes', 'add_cards_meta_box' );
+	
+	// saves metas for CPT Cards
+	function save_custom_post_cards_metas( $post_id ) {
+		
+		$metaNonce    = "cardsMetaNonce";
+		$saveFields   = "saveCardsFields";
+		$fields       = "cards_fields";
+		
+		return save_custom_post_metas($post_id, $metaNonce, $saveFields, $fields);
+	}
+	add_action( 'save_post', 'save_custom_post_cards_metas' );
+	/* END - Add Custom Post Type - Cards */
 	

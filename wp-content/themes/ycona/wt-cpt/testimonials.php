@@ -133,9 +133,10 @@ function show_testimonials_custom_fields() {
 
         jQuery(document).ready(function() {
 
-            jQuery(".add").click(function() {
-
-                jQuery(".add").hide();
+            jQuery("#wt-wrapper-testimonials + .add").click(function() {
+                var $addBtn = jQuery(this);
+                var $wrapper = $addBtn.prev(".wt-wrapper-cpt");
+                $addBtn.hide();
 
                 let count = getExistingElements(".testimonials");
 
@@ -215,35 +216,34 @@ function show_testimonials_custom_fields() {
 
                 </div>`;
 	            
-	            jQuery('#wt-wrapper-testimonials').append(testimonialsHTML);
+	            $wrapper.append(testimonialsHTML);
 	            
 	            let target = "<?php echo admin_url('admin-ajax.php'); ?>";
 	            
-	            let createWpEditor = function(editor_id, editor_name) {
-		            console.log(editor_id);
+	            let createWpEditor = function(editor_id, editor_name, $addBtn) {
 		            let data_text = {
 			            'action': 'wt_get_text_editor',
 			            'text_editor_id': editor_id,
 			            'textarea_name': editor_name
 		            }
 		            
-		            jQuery.post(target, data_text, function (response) {
-			            
-			            let cont = "#box-row2-" + count + "-" + editor_id;
-			            jQuery(cont).append(response);
-			            tinymce.execCommand('mceAddEditor', false, editor_id);
-			            quicktags({id: editor_id});
-			            
-			            jQuery(".add").show();
-		            });
+		            jQuery.post(target, data_text)
+		                .done(function (response) {
+			                let cont = "#box-row2-" + count + "-" + editor_id;
+			                jQuery(cont).append(response);
+			                if (typeof tinymce !== "undefined") tinymce.execCommand('mceAddEditor', false, editor_id);
+			                if (typeof quicktags !== "undefined") quicktags({id: editor_id});
+		                })
+		                .always(function() {
+		                    $addBtn.show();
+		                });
 	            }
 	            
 	            // message Editor
 	            let message_id = "testimonials_fields_" + count + "_message";
 	            let message_name = "testimonials_fields[testimonials][" + count + "][message]";
 
-	            
-	            createWpEditor(message_id, message_name);
+	            createWpEditor(message_id, message_name, $addBtn);
 				
                 setButtons();
                 resetSort();
@@ -251,23 +251,6 @@ function show_testimonials_custom_fields() {
 
             setButtons();
         });
-
-        // Init sort buttons
-        function setButtons(){
-            jQuery('button').show();
-            jQuery('.testimonials button.sort-up').first().hide();
-            jQuery('.testimonials button.sort-down').last().hide();
-        }
-
-        // sort Buttons order
-        function resetSort(){
-            var i=0;
-            jQuery('.testimonials').each(function(){
-                jQuery(this).attr("data-sort", i);
-                i++;
-            });
-        }
-
     </script>
 <?php }
 /* END - Custom Post Type - testimonials */

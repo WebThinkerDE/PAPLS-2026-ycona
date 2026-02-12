@@ -84,6 +84,7 @@ domRdy(function() {
         '#teasers_fields_meta_box .image-upload, ' +
         '#icons_fields_meta_box .image-upload, ' +
         '#testimonials_fields_meta_box .image-upload, ' +
+        '#cards_fields_meta_box .image-upload, ' +
         '#testimonials_fields_meta_box .image-upload-2, ' +
         '#flags_fields_meta_box .image-upload '
         , function(e) {
@@ -149,6 +150,7 @@ domRdy(function() {
         '#teasers_fields_meta_box .image-upload-remove, ' +
         '#icons_fields_meta_box .image-upload-remove, ' +
         '#testimonials_fields_meta_box .image-upload-remove, ' +
+        '#cards_fields_meta_box .image-upload-remove, ' +
         '#testimonials_fields_meta_box .image-upload-remove-2, ' +
         '#flags_fields_meta_box .image-upload-remove '
         , function(e) {
@@ -189,51 +191,49 @@ domRdy(function() {
 
 
     // sort Functions
-    // after click on down
-    jQuery(document).on('click',
-        '#wt-wrapper-squares .sort-down, ' +
-        '#wt-wrapper-flags .sort-down, ' +
-        '#wt-wrapper-icons .sort-down, ' +
-        '#wt-wrapper-testimonials .sort-down',
-        function(e) {
-            console.log("down");
-            let c_card = jQuery(this).closest('.cpt-element');
-            let t_card= c_card.next('.cpt-element');
+    // after click on down - generic selector for all CPTs
+    jQuery(document).on('click', '.wt-wrapper-cpt .sort-down', function(e) {
+        let c_card = jQuery(this).closest('.cpt-element');
+        let t_card = c_card.next('.cpt-element');
 
-            c_card.insertAfter(t_card);
+        c_card.insertAfter(t_card);
 
-            setButtons();
-            resetSort();
-        });
+        setButtons();
+        resetSort();
+    });
 
-    // after click on up
-    jQuery(document).on('click',
-        '#wt-wrapper-squares .sort-up, ' +
-        '#wt-wrapper-flags .sort-up, ' +
-        '#wt-wrapper-icons .sort-up, ' +
-        '#wt-wrapper-testimonials .sort-up', function(e) {
-            console.log("up");
-            let c_card = jQuery(this).closest('.cpt-element');
-            let t_card= c_card.prev('.cpt-element');
+    // after click on up - generic selector for all CPTs
+    jQuery(document).on('click', '.wt-wrapper-cpt .sort-up', function(e) {
+        let c_card = jQuery(this).closest('.cpt-element');
+        let t_card = c_card.prev('.cpt-element');
 
-            c_card.insertBefore(t_card);
+        c_card.insertBefore(t_card);
 
-            setButtons();
-            resetSort();
-        });
+        setButtons();
+        resetSort();
+    });
 
 
     /* Functions for CPT */
-    // remove element
-    jQuery(document).on('click', '.remove', function() {
+    // remove element - works for all CPTs inside .wt-wrapper-cpt
+    jQuery(document).on('click', '.wt-wrapper-cpt .remove', function() {
+        jQuery(this).closest('.cpt-element').remove();
+        setButtons();
+        resetSort();
+    });
 
+    // remove element - for sliders/squares (legacy)
+    jQuery(document).on('click', '.remove', function() {
         var type = jQuery(this).data("type");
 
         if(type === "cpt-element")
         {
             jQuery(this).closest('.cpt-element').remove();
+            setButtons();
+            resetSort();
+
         }
-        else
+        else if (!jQuery(this).closest('.wt-wrapper-cpt').length)
         {
             jQuery(this).closest('.slider').remove();
             jQuery(this).closest('.squares').remove();
@@ -250,4 +250,28 @@ function getExistingElements(nameOfElement){
     let count = jQuery(nameOfElement).length;
 
     return count+1;
+}
+
+// Generic setButtons - works for all CPTs
+function setButtons(){
+    // Show all sort buttons first
+    jQuery('.wt-wrapper-cpt .sortButtons button').show();
+
+    // For each CPT wrapper, hide the first sort-up and last sort-down
+    jQuery('.wt-wrapper-cpt').each(function() {
+        jQuery(this).find('.cpt-element:first-child .sort-up').hide();
+        jQuery(this).find('.cpt-element:last-child .sort-down').hide();
+    });
+
+}
+
+// Generic resetSort - works for all CPTs
+function resetSort(){
+    jQuery('.wt-wrapper-cpt').each(function() {
+        var i = 0;
+        jQuery(this).find('.cpt-element').each(function(){
+            jQuery(this).attr("data-sort", i);
+            i++;
+        });
+    });
 }

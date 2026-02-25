@@ -1,6 +1,6 @@
 <?php
 /**
- * Empty cart page – custom WebThinker Shop  design
+ * Empty cart page – custom ycona.one  design
  *
  * This template overrides WooCommerce's cart/cart-empty.php.
  * Uses the same colour language as the Thank-you page (primary, light-gray).

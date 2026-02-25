@@ -1,6 +1,6 @@
 <?php
 /**
- * Checkout Form – WebThinker Shop  theme override
+ * Checkout Form – ycona.one  theme override
  *
  * Modern two-column checkout: billing/shipping left, order summary right.
  *

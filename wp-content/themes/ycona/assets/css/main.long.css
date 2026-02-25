@@ -448,7 +448,7 @@ ul.wt-list-style li::before {
     top: 4px;
     width: 20px;
     height: 20px;
-    background: url("/wp-content/themes/webthinkershop/assets/img/vectors/circlePoints.svg") no-repeat center center;
+    background: url("/wp-content/themes/ycona/assets/img/vectors/circlePoints.svg") no-repeat center center;
 }
 
 ul.wp-block-list {
@@ -472,7 +472,7 @@ ul.wp-block-list li::before {
     top: 4px;
     width: 20px;
     height: 20px;
-    background: url("/wp-content/themes/webthinkershop/assets/img/vectors/circlePoints.svg") no-repeat center center;
+    background: url("/wp-content/themes/ycona/assets/img/vectors/circlePoints.svg") no-repeat center center;
 }
 
 /* order list */

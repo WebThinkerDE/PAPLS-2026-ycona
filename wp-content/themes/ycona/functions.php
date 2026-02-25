@@ -368,8 +368,8 @@
 
             if ($args->walker->has_children) {
                 $item_output .= '<div class="' . $arrow_class . '">
-                        <img alt="menu-open" src="/wp-content/themes/webthinkershop/assets/img/vectors/OpendropdownMenu.svg" class="arrow-menu-open" /> 
-                        <img alt="menu-close" src="/wp-content/themes/webthinkershop/assets/img/vectors/ClosedropdownMenu.svg" class="d-none arrow-menu-close" /> 
+                        <img alt="menu-open" src="/wp-content/themes/ycona/assets/img/vectors/OpendropdownMenu.svg" class="arrow-menu-open" /> 
+                        <img alt="menu-close" src="/wp-content/themes/ycona/assets/img/vectors/ClosedropdownMenu.svg" class="d-none arrow-menu-close" /> 
                 </div>';
                 $item_output .= '</span>';
             }

@@ -22,7 +22,7 @@ function show_slider_custom_fields() {
 		<input type="hidden" name="slider_meta_nonce" value="<?php echo wp_create_nonce( 'save_slider_fields' ); ?>">
 
 		<div class="slider-settings">
-			<h3><?php _e( 'Slider', 'webthinkershop' ); ?></h3>
+			<h3><?php _e( 'Slider', 'ycona' ); ?></h3>
 		</div>
 
 		<div id="wt-wrapper-slider" class="wt-wrapper-cpt">
@@ -72,7 +72,7 @@ function show_slider_custom_fields() {
 			<div id="box-wrapper-' . (int) $c . '" class="slider-box cpt-box">
 
 				<div class="click-area">
-					<h3>' . esc_html( sprintf( __( 'Slide #%d', 'webthinkershop' ), $c + 1 ) ) . '</h3>
+					<h3>' . esc_html( sprintf( __( 'Slide #%d', 'ycona' ), $c + 1 ) ) . '</h3>
 				</div>
 
 				<div class="content-area">
@@ -80,53 +80,53 @@ function show_slider_custom_fields() {
 						<dt></dt>
 						<dd><hr></dd>
 
-						<dt>' . __( 'Background Image', 'webthinkershop' ) . '</dt>
+						<dt>' . __( 'Background Image', 'ycona' ) . '</dt>
 						<dd>
 							<input type="hidden" name="slider_fields[slides][' . (int) $c . '][image]" class="meta-image" value="' . esc_attr( $img_src ) . '">
 							<input type="hidden" name="slider_fields[slides][' . (int) $c . '][imageId]" class="meta-image-id" value="' . esc_attr( $img_id ) . '">
-							<input type="button" data-id="' . (int) $c . '" class="button image-upload" value="' . __( 'Browse', 'webthinkershop' ) . '">
-							<input type="button" class="button image-upload-remove" data-id="' . (int) $c . '" value="' . __( 'Remove', 'webthinkershop' ) . '">
+							<input type="button" data-id="' . (int) $c . '" class="button image-upload" value="' . __( 'Browse', 'ycona' ) . '">
+							<input type="button" class="button image-upload-remove" data-id="' . (int) $c . '" value="' . __( 'Remove', 'ycona' ) . '">
 						</dd>
 
-						<dt>' . __( 'Image Preview', 'webthinkershop' ) . '</dt>
+						<dt>' . __( 'Image Preview', 'ycona' ) . '</dt>
 						<dd>
 							<div class="image-preview"><img src="' . esc_url( $img_src ) . '" alt=""></div>
 						</dd>
 
-						<dt>' . __( 'Show Overlay', 'webthinkershop' ) . '</dt>
+						<dt>' . __( 'Show Overlay', 'ycona' ) . '</dt>
 						<dd>
 							<input type="hidden" name="slider_fields[slides][' . (int) $c . '][show_overlay]" value="0">
-							<label><input type="checkbox" name="slider_fields[slides][' . (int) $c . '][show_overlay]" value="1" ' . checked( $show_overlay, true, false ) . '> ' . __( 'Dark overlay on image', 'webthinkershop' ) . '</label>
+							<label><input type="checkbox" name="slider_fields[slides][' . (int) $c . '][show_overlay]" value="1" ' . checked( $show_overlay, true, false ) . '> ' . __( 'Dark overlay on image', 'ycona' ) . '</label>
 						</dd>
 
-						<dt>' . __( 'Slide layout', 'webthinkershop' ) . '</dt>
+						<dt>' . __( 'Slide layout', 'ycona' ) . '</dt>
 						<dd>
 							<select name="slider_fields[slides][' . (int) $c . '][slide_layout]" class="regular-text">
-								<option value="default" ' . selected( $slide_layout, 'default', false ) . '>' . __( 'Default (full image)', 'webthinkershop' ) . '</option>
-								<option value="split" ' . selected( $slide_layout, 'split', false ) . '>' . __( 'Split (left content, right image with effects)', 'webthinkershop' ) . '</option>
+								<option value="default" ' . selected( $slide_layout, 'default', false ) . '>' . __( 'Default (full image)', 'ycona' ) . '</option>
+								<option value="split" ' . selected( $slide_layout, 'split', false ) . '>' . __( 'Split (left content, right image with effects)', 'ycona' ) . '</option>
 							</select>
 						</dd>
 
-						<dt>' . __( 'Effect color 1 (accent)', 'webthinkershop' ) . '</dt>
+						<dt>' . __( 'Effect color 1 (accent)', 'ycona' ) . '</dt>
 						<dd>
-							<input type="color" name="slider_fields[slides][' . (int) $c . '][effect_color_1]" value="' . esc_attr( $effect_color_1_attr ) . '" class="slider-color-input" aria-label="' . esc_attr__( 'Accent color', 'webthinkershop' ) . '" style="width:48px;height:32px;padding:2px;cursor:pointer;border:1px solid #8c8f94;border-radius:4px;">
+							<input type="color" name="slider_fields[slides][' . (int) $c . '][effect_color_1]" value="' . esc_attr( $effect_color_1_attr ) . '" class="slider-color-input" aria-label="' . esc_attr__( 'Accent color', 'ycona' ) . '" style="width:48px;height:32px;padding:2px;cursor:pointer;border:1px solid #8c8f94;border-radius:4px;">
 						</dd>
 
-						<dt>' . __( 'Effect color 2 (dark)', 'webthinkershop' ) . '</dt>
+						<dt>' . __( 'Effect color 2 (dark)', 'ycona' ) . '</dt>
 						<dd>
-							<input type="color" name="slider_fields[slides][' . (int) $c . '][effect_color_2]" value="' . esc_attr( $effect_color_2_attr ) . '" class="slider-color-input" aria-label="' . esc_attr__( 'Dark color', 'webthinkershop' ) . '" style="width:48px;height:32px;padding:2px;cursor:pointer;border:1px solid #8c8f94;border-radius:4px;">
+							<input type="color" name="slider_fields[slides][' . (int) $c . '][effect_color_2]" value="' . esc_attr( $effect_color_2_attr ) . '" class="slider-color-input" aria-label="' . esc_attr__( 'Dark color', 'ycona' ) . '" style="width:48px;height:32px;padding:2px;cursor:pointer;border:1px solid #8c8f94;border-radius:4px;">
 						</dd>
 
 						<dd><hr></dd>
 
-						<dt>' . __( 'Subtitle', 'webthinkershop' ) . '</dt>
+						<dt>' . __( 'Subtitle', 'ycona' ) . '</dt>
 						<dd>
-							<input type="text" name="slider_fields[slides][' . (int) $c . '][subtitle]" placeholder="' . __( 'e.g. Let\'s go', 'webthinkershop' ) . '" class="regular-text" value="' . esc_attr( $subtitle ) . '">
+							<input type="text" name="slider_fields[slides][' . (int) $c . '][subtitle]" placeholder="' . __( 'e.g. Let\'s go', 'ycona' ) . '" class="regular-text" value="' . esc_attr( $subtitle ) . '">
 						</dd>
 
-						<dt>' . __( 'Title', 'webthinkershop' ) . '</dt>
+						<dt>' . __( 'Title', 'ycona' ) . '</dt>
 						<dd>
-							<input type="text" name="slider_fields[slides][' . (int) $c . '][slide_title]" placeholder="' . __( 'Write here', 'webthinkershop' ) . '..." class="regular-text" value="' . esc_attr( $slide_title ) . '">
+							<input type="text" name="slider_fields[slides][' . (int) $c . '][slide_title]" placeholder="' . __( 'Write here', 'ycona' ) . '..." class="regular-text" value="' . esc_attr( $slide_title ) . '">
 						</dd>
 
 						<div class="elements-hexagon-style">

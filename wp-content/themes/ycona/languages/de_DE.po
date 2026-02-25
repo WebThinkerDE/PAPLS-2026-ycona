@@ -1,9 +1,9 @@
 # German translation for the WebThinker Shop  theme.
 # Copyright (C) 2026 WebThinker Shop
-# This file is distributed under the same license as the webthinkershop  package.
+# This file is distributed under the same license as the ycona  package.
 msgid ""
 msgstr ""
-"Project-Id-Version: webthinkershop  1.0.0\n"
+"Project-Id-Version: ycona  1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-13 12:00+0000\n"
 "PO-Revision-Date: 2026-02-13 12:00+0000\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Cursor IDE\n"
-"X-Domain: webthinkershop \n"
+"X-Domain: ycona \n"
 
 # ──────────────────────────────────────────
 #  Theme Options – General
@@ -1102,8 +1102,8 @@ msgstr "Suche"
 #  Misc / Theme text domain slug
 # ──────────────────────────────────────────
 
-msgid "webthinkershop"
-msgstr "webthinkershop"
+msgid "ycona"
+msgstr "ycona"
 
 # ──────────────────────────────────────────
 #  Theme Options – Sidebar Navigation

@@ -52,15 +52,15 @@ $is_featured = $product->is_featured();
 			<?php echo wp_get_attachment_image( $image_id, 'woocommerce_thumbnail', false, array( 'class' => 'attachment-woocommerce_thumbnail', 'loading' => 'lazy', 'alt' => esc_attr( $title ) ) ); ?>
 			<?php woocommerce_show_product_loop_sale_flash(); ?>
 			<?php if ( $is_featured ) : ?>
-				<span class="wt-shop-shop-badge wt-shop-shop-badge-most-popular" aria-hidden="true"><?php esc_html_e( 'Most Popular', 'webthinkershop' ); ?></span>
+				<span class="wt-shop-shop-badge wt-shop-shop-badge-most-popular" aria-hidden="true"><?php esc_html_e( 'Most Popular', 'ycona' ); ?></span>
 			<?php endif; ?>
 		</a>
 	<?php else : ?>
 		<a href="<?php echo esc_url( $permalink ); ?>" class="woocommerce-loop-product__link woocommerce-loop-product__link--no-img" aria-hidden="true" tabindex="-1">
-			<span class="attachment-woocommerce_placeholder"><?php esc_html_e( 'No image', 'webthinkershop' ); ?></span>
+			<span class="attachment-woocommerce_placeholder"><?php esc_html_e( 'No image', 'ycona' ); ?></span>
 			<?php woocommerce_show_product_loop_sale_flash(); ?>
 			<?php if ( $is_featured ) : ?>
-				<span class="wt-shop-shop-badge wt-shop-shop-badge-most-popular" aria-hidden="true"><?php esc_html_e( 'Most Popular', 'webthinkershop' ); ?></span>
+				<span class="wt-shop-shop-badge wt-shop-shop-badge-most-popular" aria-hidden="true"><?php esc_html_e( 'Most Popular', 'ycona' ); ?></span>
 			<?php endif; ?>
 		</a>
 	<?php endif; ?>

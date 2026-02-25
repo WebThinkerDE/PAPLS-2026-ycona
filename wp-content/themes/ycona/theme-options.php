@@ -91,7 +91,7 @@ function add_theme_options() {
                     <i class="ph ph-gear-six"></i>
             </div>
                 <div class="wt-header-text">
-                    <h1 class="wt-header-title"><?php _e( 'Theme Options', "webthinkershop" ); ?></h1>
+                    <h1 class="wt-header-title"><?php _e( 'Theme Options', "ycona" ); ?></h1>
                     <p class="wt-header-subtitle"><?php _e( 'Customize your website appearance and functionality', "webthinkershop" ); ?></p>
                 </div>
             </div>

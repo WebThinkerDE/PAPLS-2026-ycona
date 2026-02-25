@@ -24,7 +24,7 @@ function wt_you_may_like_block_rc( $attributes, $content ) {
 
 	$layout       = isset( $attributes['layout'] ) ? $attributes['layout'] : 'container';
 	$show_title   = isset( $attributes['show_title'] ) ? $attributes['show_title'] : 'yes';
-	$title        = isset( $attributes['title'] ) ? $attributes['title'] : __( 'You may also like', 'webthinkershop' );
+	$title        = isset( $attributes['title'] ) ? $attributes['title'] : __( 'You may also like', 'ycona' );
 	$use_manual   = isset( $attributes['use_manual'] ) ? $attributes['use_manual'] : 'no';
 	$product_ids  = isset( $attributes['product_ids'] ) ? $attributes['product_ids'] : '';
 	$limit_raw    = isset( $attributes['limit'] ) ? $attributes['limit'] : '';
@@ -90,8 +90,8 @@ function wt_you_may_like_block_rc( $attributes, $content ) {
 					?>
 				</div>
 			</div>
-			<button type="button" class="wt-shop-swiper-btn wt-shop-swiper-btn-prev" aria-label="<?php esc_attr_e( 'Previous', 'webthinkershop' ); ?>"><i class="bi bi-chevron-left"></i></button>
-			<button type="button" class="wt-shop-swiper-btn wt-shop-swiper-btn-next" aria-label="<?php esc_attr_e( 'Next', 'webthinkershop' ); ?>"><i class="bi bi-chevron-right"></i></button>
+			<button type="button" class="wt-shop-swiper-btn wt-shop-swiper-btn-prev" aria-label="<?php esc_attr_e( 'Previous', 'ycona' ); ?>"><i class="bi bi-chevron-left"></i></button>
+			<button type="button" class="wt-shop-swiper-btn wt-shop-swiper-btn-next" aria-label="<?php esc_attr_e( 'Next', 'ycona' ); ?>"><i class="bi bi-chevron-right"></i></button>
 		</div>
 	</section>
 	</div>

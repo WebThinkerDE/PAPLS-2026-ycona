@@ -24,7 +24,7 @@ function wt_shop_mini_cart_count_html() {
         return '<span class="wt-mini-cart-count" data-count="0">0</span>';
     }
     $count = WC()->cart ? WC()->cart->get_cart_contents_count() : 0;
-    $label = $count > 0 ? (string) $count : esc_html__( 'Empty', 'webthinkershop' );
+    $label = $count > 0 ? (string) $count : esc_html__( 'Empty', 'ycona' );
     return '<span class="wt-mini-cart-count" data-count="' . absint( $count ) . '">' . esc_html( $label ) . '</span>';
 }
 
@@ -46,13 +46,13 @@ function wt_shop_mini_cart_model() {
  */
 function wt_shop_mini_cart_content_html() {
     if ( ! function_exists( 'WC' ) || ! WC()->cart ) {
-        return '<div class="wt-mini-cart-items"><p class="wt-mini-cart-empty">' . esc_html__( 'Your cart is empty.', 'webthinkershop' ) . '</p></div>';
+        return '<div class="wt-mini-cart-items"><p class="wt-mini-cart-empty">' . esc_html__( 'Your cart is empty.', 'ycona' ) . '</p></div>';
     }
     $cart     = WC()->cart;
     $cart_url = wt_shop_mini_cart_cart_url();
     if ( $cart->is_empty() ) {
-        return '<div class="wt-mini-cart-items"><p class="wt-mini-cart-empty">' . esc_html__( 'Your cart is empty.', 'webthinkershop' ) . '</p></div>' .
-            '<div class="wt-mini-cart-subtotal d-none"><span>' . esc_html__( 'Total:', 'webthinkershop' ) . '</span><strong></strong></div>' .
+        return '<div class="wt-mini-cart-items"><p class="wt-mini-cart-empty">' . esc_html__( 'Your cart is empty.', 'ycona' ) . '</p></div>' .
+            '<div class="wt-mini-cart-subtotal d-none"><span>' . esc_html__( 'Total:', 'ycona' ) . '</span><strong></strong></div>' .
             '<a class="wt-btn wt-btn-primary wt-btn-cart d-none" href="' . esc_url( $cart_url ) . '">' . esc_html__( 'Go to cart', 'webthinkershop' ) . '</a>';
     }
     $model = wt_shop_mini_cart_model();

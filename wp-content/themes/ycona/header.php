@@ -53,7 +53,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/wp-content/themes/ycona/assets/img/favicon//favicon-16x16.png">
     <link rel="manifest" href="/wp-content/themes/ycona/assets/img/favicon/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/wp-content/themes/webthinkershop/assets/img/favicon/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="/wp-content/themes/ycona/assets/img/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 </head>
 <body <?php body_class(); ?>>
@@ -68,10 +68,10 @@
             <div class="header-wrapper">
                 <div class="logo-wrapper">
                     <a class="logo-desktop" href="<?php echo esc_url(home_url('/')); ?>">
-                        <img width="120" height="auto" alt="logo webthinkershop" src="<?php echo $wt_shop_template_logo ?>"/>
+                        <img width="120" height="auto" alt="logo ycona" src="<?php echo $wt_shop_template_logo ?>"/>
                     </a>
                     <a class="logo-desktop-active d-none" href="<?php echo esc_url(home_url('/')); ?>">
-                        <img width="120" height="auto" alt="logo webthinkershop" src="<?php echo $wt_shop_template_logo_active ?>"/>
+                        <img width="120" height="auto" alt="logo ycona" src="<?php echo $wt_shop_template_logo_active ?>"/>
                     </a>
                 </div>
 
@@ -93,26 +93,26 @@
 							$mini_cart_model = function_exists( 'wt_shop_mini_cart_model' ) ? wt_shop_mini_cart_model() : 'panel';
 							?>
                             <!-- Search trigger -->
-                            <button type="button" id="wt-shop-search-trigger" class="d-none d-md-block wt-shop-search-trigger" aria-label="<?php esc_attr_e( 'Search by Product Name or SKU', 'webthinkershop' ); ?>">
+                            <button type="button" id="wt-shop-search-trigger" class="d-none d-md-block wt-shop-search-trigger" aria-label="<?php esc_attr_e( 'Search by Product Name or SKU', 'ycona' ); ?>">
                                 <i class="bi bi-search" aria-hidden="true"></i>
                             </button>
 
                             <?php if ( $mini_cart_model === 'dropdown' ) : ?>
                             <div class="wt-mini-cart-wrap">
-                                <button type="button" id="wt-mini-cart-trigger" class="wt-mini-cart-trigger d-flex align-items-center gap-1" aria-label="<?php esc_attr_e( 'Open cart', 'webthinkershop' ); ?>" aria-expanded="false" aria-controls="wt-mini-cart-panel">
+                                <button type="button" id="wt-mini-cart-trigger" class="wt-mini-cart-trigger d-flex align-items-center gap-1" aria-label="<?php esc_attr_e( 'Open cart', 'ycona' ); ?>" aria-expanded="false" aria-controls="wt-mini-cart-panel">
                                     <i class="bi bi-cart3" aria-hidden="true"></i>
                                     <span class="wt-mini-cart-count-wrap"><?php echo function_exists( 'wt_shop_mini_cart_count_html' ) ? wt_shop_mini_cart_count_html() : '<span class="wt-mini-cart-count" data-count="0">0</span>'; ?></span>
                                 </button>
                                 <?php get_template_part( 'template-parts/mini-cart-panel' ); ?>
                             </div>
                             <?php else : ?>
-                            <button type="button" id="wt-mini-cart-trigger" class="wt-mini-cart-trigger d-flex align-items-center gap-1" aria-label="<?php esc_attr_e( 'Open cart', 'webthinkershop' ); ?>" aria-expanded="false" aria-controls="wt-mini-cart-panel">
+                            <button type="button" id="wt-mini-cart-trigger" class="wt-mini-cart-trigger d-flex align-items-center gap-1" aria-label="<?php esc_attr_e( 'Open cart', 'ycona' ); ?>" aria-expanded="false" aria-controls="wt-mini-cart-panel">
                                 <i class="bi bi-cart3" aria-hidden="true"></i>
                                 <span class="wt-mini-cart-count-wrap"><?php echo function_exists( 'wt_shop_mini_cart_count_html' ) ? wt_shop_mini_cart_count_html() : '<span class="wt-mini-cart-count" data-count="0">0</span>'; ?></span>
                             </button>
                             <?php endif; ?>
 						<?php else : ?>
-                            <a href="<?php echo esc_url( function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : home_url( '/cart/' ) ); ?>" class="wt-mini-cart-trigger d-flex align-items-center gap-1" aria-label="<?php esc_attr_e( 'View cart', 'webthinkershop' ); ?>">
+                            <a href="<?php echo esc_url( function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : home_url( '/cart/' ) ); ?>" class="wt-mini-cart-trigger d-flex align-items-center gap-1" aria-label="<?php esc_attr_e( 'View cart', 'ycona' ); ?>">
                                 <i class="bi bi-cart3" aria-hidden="true"></i>
                                 <span class="wt-mini-cart-count-wrap"><span class="wt-mini-cart-count" data-count="0">0</span></span>
                             </a>

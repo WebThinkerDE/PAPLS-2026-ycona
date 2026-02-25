@@ -125,36 +125,36 @@ function wt_video_block_rc( $attributes, $content ) {
 			<button type="button" class="video-player-btn" data-play aria-label="' . esc_attr__( 'Play', 'ycona' ) . '">
 				<i class="bi bi-play-fill" aria-hidden="true"></i>
 				<i class="bi bi-pause-fill" aria-hidden="true"></i>
-				<span class="sr-only">' . esc_html__( 'Play / Pause', 'webthinkershop' ) . '</span>
+				<span class="sr-only">' . esc_html__( 'Play / Pause', 'ycona' ) . '</span>
 			</button>
 			<div class="video-player-progress-wrap" data-progress-wrap>
-				<input type="range" class="video-player-progress" data-progress min="0" max="100" value="0" step="0.1" aria-label="' . esc_attr__( 'Seek', 'webthinkershop' ) . '">
+				<input type="range" class="video-player-progress" data-progress min="0" max="100" value="0" step="0.1" aria-label="' . esc_attr__( 'Seek', 'ycona' ) . '">
 			</div>
 			<span class="video-player-time" data-time aria-live="off">0:00</span>
-			<button type="button" class="video-player-btn" data-mute aria-label="' . esc_attr__( 'Mute', 'webthinkershop' ) . '">
+			<button type="button" class="video-player-btn" data-mute aria-label="' . esc_attr__( 'Mute', 'ycona' ) . '">
 				<i class="bi bi-volume-up-fill" aria-hidden="true"></i>
 				<i class="bi bi-volume-mute-fill" aria-hidden="true"></i>
-				<span class="sr-only">' . esc_html__( 'Mute / Unmute', 'webthinkershop' ) . '</span>
+				<span class="sr-only">' . esc_html__( 'Mute / Unmute', 'ycona' ) . '</span>
 			</button>
-			<input type="range" class="video-player-volume" data-volume min="0" max="100" value="100" step="1" aria-label="' . esc_attr__( 'Volume', 'webthinkershop' ) . '">
-			<button type="button" class="video-player-btn" data-cc aria-label="' . esc_attr__( 'Captions', 'webthinkershop' ) . '">
+			<input type="range" class="video-player-volume" data-volume min="0" max="100" value="100" step="1" aria-label="' . esc_attr__( 'Volume', 'ycona' ) . '">
+			<button type="button" class="video-player-btn" data-cc aria-label="' . esc_attr__( 'Captions', 'ycona' ) . '">
 				<span>CC</span>
-				<span class="sr-only">' . esc_html__( 'Toggle Captions', 'webthinkershop' ) . '</span>
+				<span class="sr-only">' . esc_html__( 'Toggle Captions', 'ycona' ) . '</span>
 			</button>
-			<button type="button" class="video-player-btn" data-quality aria-label="' . esc_attr__( 'Quality', 'webthinkershop' ) . '" style="display:none">
+			<button type="button" class="video-player-btn" data-quality aria-label="' . esc_attr__( 'Quality', 'ycona' ) . '" style="display:none">
 				<i class="bi bi-gear-fill" aria-hidden="true"></i>
 				<span class="vp-quality-label">AUTO</span>
 			</button>
-			<button type="button" class="video-player-btn" data-fullscreen aria-label="' . esc_attr__( 'Fullscreen', 'webthinkershop' ) . '">
+			<button type="button" class="video-player-btn" data-fullscreen aria-label="' . esc_attr__( 'Fullscreen', 'ycona' ) . '">
 				<i class="bi bi-fullscreen" aria-hidden="true"></i>
 				<i class="bi bi-fullscreen-exit" aria-hidden="true"></i>
-				<span class="sr-only">' . esc_html__( 'Toggle Fullscreen', 'webthinkershop' ) . '</span>
+				<span class="sr-only">' . esc_html__( 'Toggle Fullscreen', 'ycona' ) . '</span>
 			</button>
 		</div>
 		
 		<!-- Loading Indicator -->
 		<div class="video-player-loading" data-loading aria-hidden="true" role="status">
-			<span class="sr-only">' . esc_html__( 'Loading...', 'webthinkershop' ) . '</span>
+			<span class="sr-only">' . esc_html__( 'Loading...', 'ycona' ) . '</span>
 		</div>
 		
 		<!-- Error Display -->

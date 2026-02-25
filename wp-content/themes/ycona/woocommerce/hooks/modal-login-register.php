@@ -10,7 +10,7 @@ function wt_shop_ajax_modal_login() {
     $redirect = isset( $_POST['redirect'] ) ? esc_url_raw( wp_unslash( $_POST['redirect'] ) ) : '';
 
     if ( empty( $username ) || empty( $password ) ) {
-        wp_send_json_error( array( 'message' => __( 'Username and password are required.', 'webthinkershop' ) ) );
+        wp_send_json_error( array( 'message' => __( 'Username and password are required.', 'ycona' ) ) );
     }
 
     $user = wp_signon(
@@ -25,7 +25,7 @@ function wt_shop_ajax_modal_login() {
     if ( is_wp_error( $user ) ) {
         $message = $user->get_error_message();
         if ( empty( $message ) ) {
-            $message = __( 'Invalid username or password.', 'webthinkershop' );
+            $message = __( 'Invalid username or password.', 'ycona' );
         }
         wp_send_json_error( array( 'message' => $message ) );
     }
@@ -78,10 +78,10 @@ function wt_shop_ajax_modal_register() {
     check_ajax_referer( 'woocommerce-register', 'woocommerce-register-nonce' );
 
     if ( ! function_exists( 'WC' ) ) {
-        wp_send_json_error( array( 'message' => __( 'Registration is not available.', 'webthinkershop' ) ) );
+        wp_send_json_error( array( 'message' => __( 'Registration is not available.', 'ycona' ) ) );
     }
     if ( 'yes' !== get_option( 'woocommerce_enable_myaccount_registration' ) ) {
-        wp_send_json_error( array( 'message' => __( 'Registration is currently disabled.', 'webthinkershop' ) ) );
+        wp_send_json_error( array( 'message' => __( 'Registration is currently disabled.', 'ycona' ) ) );
     }
 
     $options_all   = get_option( 'wt_shop_theme_options_all', array() );
@@ -89,7 +89,7 @@ function wt_shop_ajax_modal_register() {
     if ( $recaptcha_sec !== '' ) {
         $recaptcha_response = isset( $_POST['g-recaptcha-response'] ) ? sanitize_text_field( wp_unslash( $_POST['g-recaptcha-response'] ) ) : '';
         if ( ! wt_shop_verify_recaptcha( $recaptcha_response, $recaptcha_sec ) ) {
-            wp_send_json_error( array( 'message' => __( 'Please complete the reCAPTCHA verification.', 'webthinkershop' ) ) );
+            wp_send_json_error( array( 'message' => __( 'Please complete the reCAPTCHA verification.', 'ycona' ) ) );
         }
     }
 
@@ -101,7 +101,7 @@ function wt_shop_ajax_modal_register() {
     $generate_password = 'yes' === get_option( 'woocommerce_registration_generate_password' );
 
     if ( ! $generate_username && empty( $username ) ) {
-        wp_send_json_error( array( 'message' => __( 'Username is required.', 'webthinkershop' ) ) );
+        wp_send_json_error( array( 'message' => __( 'Username is required.', 'ycona' ) ) );
     }
     if ( empty( $email ) ) {
         wp_send_json_error( array( 'message' => __( 'Email is required.', 'webthinkershop' ) ) );

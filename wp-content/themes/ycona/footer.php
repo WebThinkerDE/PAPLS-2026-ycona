@@ -122,7 +122,7 @@ $nav_footer_4 = array(
         <div class="footer-body d-flex flex-column flex-xl-row justify-content-between">
             <div class="col-12 col-lg-3 pe-md-2">
                 <div class="footer-logo">
-                    <img width="100" src="<?php echo $footer_logo ?>" alt="webthinkershop logo footer" />
+                    <img width="100" src="<?php echo $footer_logo ?>" alt="ycona logo footer" />
                 </div>
                 <p class="font-bold pb-2 pt-5 pt-lg-0 wt-shop-h4"><?php echo $footer_title_1 ?></p>
                 <?php

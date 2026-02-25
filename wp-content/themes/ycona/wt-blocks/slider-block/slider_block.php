@@ -60,7 +60,7 @@ function wt_slider_block_rc( $attributes, $content ) {
 
 		$btn_html = '';
 		if ( $button_url !== '' ) {
-			$btn_label = $button_text !== '' ? $button_text : __( 'Read more', 'webthinkershop' );
+			$btn_label = $button_text !== '' ? $button_text : __( 'Read more', 'ycona' );
 			$btn_html  = '<a href="' . esc_url( $button_url ) . '" class="slide-btn animate-btn">' . esc_html( $btn_label ) . ' <i class="bi bi-chevron-right"></i></a>';
 		}
 
@@ -86,8 +86,8 @@ function wt_slider_block_rc( $attributes, $content ) {
 		</div>';
 	}
 
-	$prev_btn = $show_nav ? '<button type="button" class="slider-block-btn-prev" aria-label="' . esc_attr__( 'Previous', 'webthinkershop' ) . '"><i class="bi bi-chevron-left"></i></button>' : '';
-	$next_btn = $show_nav ? '<button type="button" class="slider-block-btn-next" aria-label="' . esc_attr__( 'Next', 'webthinkershop' ) . '"><i class="bi bi-chevron-right"></i></button>' : '';
+	$prev_btn = $show_nav ? '<button type="button" class="slider-block-btn-prev" aria-label="' . esc_attr__( 'Previous', 'ycona' ) . '"><i class="bi bi-chevron-left"></i></button>' : '';
+	$next_btn = $show_nav ? '<button type="button" class="slider-block-btn-next" aria-label="' . esc_attr__( 'Next', 'ycona' ) . '"><i class="bi bi-chevron-right"></i></button>' : '';
 
 	$html = '<section id="' . esc_attr( $uid ) . '" class="slider-block-section slider-block-count-' . (int) $slides_count . ' ' . esc_attr( $nav_class ) . ' ' . esc_attr( $class_name ) . ' space-bottom-' . esc_attr( $space_bottom ) . ' space-top-' . esc_attr( $space_top ) . '" data-slides-count="' . (int) $slides_count . '" data-autoplay="5000">
 		<div class="' . esc_attr( $section_layout ) . '">

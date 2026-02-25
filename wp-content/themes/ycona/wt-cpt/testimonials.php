@@ -107,14 +107,14 @@ function show_testimonials_custom_fields() {
                         <dt>'.__('Tick Type Type','ycona').'</dt>
                         <dd>
                             <select name="testimonials_fields[testimonials]['.$c.'][tick_type]" class="testimonials-option">
-                                <option value="green" '. selected($tick_type, "green", false) .'>' . esc_html__( 'Tick Green', 'webthinkershop' ) . '</option>
-                                <option value="orange" '. selected($tick_type, "orange", false) .'>' . esc_html__( 'Tick Orange', 'webthinkershop' ) . '</option>
-                                <option value="blue" '. selected($tick_type, "blue", false) .'>' . esc_html__( 'Tick Blue', 'webthinkershop' ) . '</option>
+                                <option value="green" '. selected($tick_type, "green", false) .'>' . esc_html__( 'Tick Green', 'ycona' ) . '</option>
+                                <option value="orange" '. selected($tick_type, "orange", false) .'>' . esc_html__( 'Tick Orange', 'ycona' ) . '</option>
+                                <option value="blue" '. selected($tick_type, "blue", false) .'>' . esc_html__( 'Tick Blue', 'ycona' ) . '</option>
                             </select>
                         </dd>
                         
                         <div class="cpt-remove">
-                            <button type="button" class="remove">'.__('Remove Testimonial', 'webthinkershop').'</button>
+                            <button type="button" class="remove">'.__('Remove Testimonial', 'ycona').'</button>
                         </div>
                     </dl>
                 </div>
@@ -126,7 +126,7 @@ function show_testimonials_custom_fields() {
 
             ?>
         </div>
-        <button type="button" class="add"><?php _e('Add Testimonial','webthinkershop'); ?></button>
+        <button type="button" class="add"><?php _e('Add Testimonial','ycona'); ?></button>
     </div>
 
     <script>
@@ -154,7 +154,7 @@ function show_testimonials_custom_fields() {
                     <div id="box-wrapper-${count}" class="testimonials-box cpt-box">
 
                         <div class="click-area">
-                            <h3><?php echo esc_html__( 'Testimonial', 'webthinkershop' ); ?> #${count}</h3>
+                            <h3><?php echo esc_html__( 'Testimonial', 'ycona' ); ?> #${count}</h3>
                         </div>
 
                         <div class="content-area link">
@@ -164,15 +164,15 @@ function show_testimonials_custom_fields() {
                                     <hr>
                                 </dd>
 
-                                <dt><?php _e('Image Profile','webthinkershop'); ?></dt>
+                                <dt><?php _e('Image Profile','ycona'); ?></dt>
                                 <dd>
                                     <input type="hidden" name="testimonials_fields[testimonials][${count}][image]" class="meta-image" value="">
                                     <input type="hidden" name="testimonials_fields[testimonials][${count}][imageId]" class="meta-image-id" value="">
-                                    <input type="button" data-id="${count}" class="button image-upload" value="<?php _e('Browse','webthinkershop'); ?>">
-                                    <input type="button" data-id="${count}" class="button image-upload-remove" value="<?php _e('Remove','webthinkershop'); ?>">
+                                    <input type="button" data-id="${count}" class="button image-upload" value="<?php _e('Browse','ycona'); ?>">
+                                    <input type="button" data-id="${count}" class="button image-upload-remove" value="<?php _e('Remove','ycona'); ?>">
                                 </dd>
 
-                                <dt><?php _e('Icon Preview','webthinkershop'); ?></dt>
+                                <dt><?php _e('Icon Preview','ycona'); ?></dt>
                                 <dd>
                                     <div class="image-preview"><img src="" alt=""></div>
                                 </dd>
@@ -182,25 +182,25 @@ function show_testimonials_custom_fields() {
                                 </dd>
 
                                <div class="elements-hexagon-style">
-                                      <dt><?php _e('Message', "webthinkershop"); ?></dt>
+                                      <dt><?php _e('Message', "ycona"); ?></dt>
                                       <span id="box-row2-${count}-testimonials_fields_${count}_message"></span>
                                </div>
                                 
                                 
-                                <dt><?php _e('Location','webthinkershop'); ?></dt>
+                                <dt><?php _e('Location','ycona'); ?></dt>
                                 <dd>
-                                    <input type="text" name="testimonials_fields[testimonials][${count}][location]" placeholder="<?php _e('Write here','webthinkershop'); ?>..." class="regular-text" value="">
+                                    <input type="text" name="testimonials_fields[testimonials][${count}][location]" placeholder="<?php _e('Write here','ycona'); ?>..." class="regular-text" value="">
                                 </dd>
 
-                                <dt><?php _e('Name and Surname','webthinkershop'); ?></dt>
+                                <dt><?php _e('Name and Surname','ycona'); ?></dt>
                                 <dd>
-                                    <input type="text" name="testimonials_fields[testimonials][${count}][name_surname]" placeholder="<?php _e('Write here','webthinkershop'); ?>..." class="regular-text" value="">
+                                    <input type="text" name="testimonials_fields[testimonials][${count}][name_surname]" placeholder="<?php _e('Write here','ycona'); ?>..." class="regular-text" value="">
                                 </dd>
 
-                                <dt><?php _e("Tick Type","webthinkershop"); ?></dt>
+                                <dt><?php _e("Tick Type","ycona"); ?></dt>
                                 <dd>
                                     <select name="testimonials_fields[testimonials][${count}][tick_type]">
-                                        <option value="green"><?php esc_html_e( 'Tick Green', 'webthinkershop' ); ?></option>
+                                        <option value="green"><?php esc_html_e( 'Tick Green', 'ycona' ); ?></option>
                                         <option value="orange"><?php esc_html_e( 'Tick Orange', 'webthinkershop' ); ?></option>
                                         <option value="blue"><?php esc_html_e( 'Tick Blue', 'webthinkershop' ); ?></option>
                                     </select>

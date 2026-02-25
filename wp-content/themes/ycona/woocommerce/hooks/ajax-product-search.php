@@ -5,7 +5,7 @@
  * Searches WooCommerce products by title and SKU.
  * Fully respects WPML – only returns products in the active language.
  *
- * @package webthinkershop
+ * @package ycona
  * @since   1.0
  */
 
@@ -26,7 +26,7 @@ function wt_shop_ajax_product_search() {
 
     // Verify nonce
     if ( ! isset( $_GET['nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['nonce'] ) ), 'wt_shop_product_search' ) ) {
-        wp_send_json_error( array( 'message' => __( 'Security check failed.', 'webthinkershop' ) ), 403 );
+        wp_send_json_error( array( 'message' => __( 'Security check failed.', 'ycona' ) ), 403 );
     }
 
     $term = isset( $_GET['term'] ) ? sanitize_text_field( wp_unslash( $_GET['term'] ) ) : '';

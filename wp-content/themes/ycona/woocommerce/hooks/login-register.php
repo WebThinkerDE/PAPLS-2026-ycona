@@ -41,7 +41,7 @@ function wt_shop_wrap_password_field_with_toggle( $html, $id_value, $name_value 
     if ( ! preg_match( $pattern, $html ) ) {
         return $html;
     }
-    $replacement = '<span class="password-input">$0<button type="button" class="show-password-input" aria-label="' . esc_attr__( 'Show password', 'webthinkershop' ) . '" aria-describedby="' . esc_attr( $id_value ) . '"></button></span>';
+    $replacement = '<span class="password-input">$0<button type="button" class="show-password-input" aria-label="' . esc_attr__( 'Show password', 'ycona' ) . '" aria-describedby="' . esc_attr( $id_value ) . '"></button></span>';
     $html        = preg_replace( $pattern, $replacement, $html, 1 );
     return $html;
 }
@@ -52,10 +52,10 @@ function wt_shop_wrap_password_field_with_toggle( $html, $id_value, $name_value 
  */
 function wt_shop_shortcode_wc_registration( $atts ) {
     if ( ! function_exists( 'WC' ) ) {
-        return '<p>' . esc_html__( 'WooCommerce is required for registration.', 'webthinkershop' ) . '</p>';
+        return '<p>' . esc_html__( 'WooCommerce is required for registration.', 'ycona' ) . '</p>';
     }
     if ( is_user_logged_in() ) {
-        return '<p>' . esc_html__( 'You are already logged in.', 'webthinkershop' ) . '</p>';
+        return '<p>' . esc_html__( 'You are already logged in.', 'ycona' ) . '</p>';
     }
     ob_start();
     $template = get_stylesheet_directory() . '/woocommerce/myaccount/form-register-only.php';
@@ -81,7 +81,7 @@ function wt_shop_register_form_recaptcha() {
 		return;
 	}
 	echo '<div class="wt-shop-recaptcha-wrap form-row form-row-wide" style="margin-bottom:1rem;">';
-	echo '<div class="g-recaptcha" data-sitekey="' . esc_attr( $site_key ) . '" data-theme="light" aria-label="' . esc_attr__( 'reCAPTCHA', 'webthinkershop' ) . '"></div>';
+	echo '<div class="g-recaptcha" data-sitekey="' . esc_attr( $site_key ) . '" data-theme="light" aria-label="' . esc_attr__( 'reCAPTCHA', 'ycona' ) . '"></div>';
 	echo '</div>';
 }
 add_action( 'woocommerce_register_form', 'wt_shop_register_form_recaptcha', 20 );

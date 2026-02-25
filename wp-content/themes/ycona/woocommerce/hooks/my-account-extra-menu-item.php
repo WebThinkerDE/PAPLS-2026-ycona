@@ -27,7 +27,7 @@ function wt_shop_myaccount_licenses_menu_item( $items ) {
     foreach ( $items as $key => $label ) {
         $new_items[ $key ] = $label;
         if ( $key === 'dashboard' ) {
-            $new_items['licenses'] = __( 'Licenses', 'webthinkershop' );
+            $new_items['licenses'] = __( 'Licenses', 'ycona' );
         }
     }
     return $new_items;

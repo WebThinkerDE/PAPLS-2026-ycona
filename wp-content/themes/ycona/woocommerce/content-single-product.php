@@ -1,6 +1,6 @@
 <?php
 /**
- * Single product content – webthinkershop theme override
+ * Single product content – ycona theme override
  *
  * Layout: gallery left, summary right; tabs below.
  *

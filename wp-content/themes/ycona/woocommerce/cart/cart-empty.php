@@ -5,7 +5,7 @@
  * This template overrides WooCommerce's cart/cart-empty.php.
  * Uses the same colour language as the Thank-you page (primary, light-gray).
  *
- * @package webthinkershop
+ * @package ycona
  * @since   1.0
  */
 
@@ -36,21 +36,21 @@ $home_url = home_url( '/' );
         </div>
 
         <h1 class="wt-shop-empty-cart-heading">
-            <?php esc_html_e( 'Your cart is empty', 'webthinkershop' ); ?>
+            <?php esc_html_e( 'Your cart is empty', 'ycona' ); ?>
         </h1>
 
         <p class="wt-shop-empty-cart-subheading">
-            <?php esc_html_e( 'Looks like you haven\'t added anything to your cart yet. Start exploring and find something you love!', 'webthinkershop' ); ?>
+            <?php esc_html_e( 'Looks like you haven\'t added anything to your cart yet. Start exploring and find something you love!', 'ycona' ); ?>
         </p>
 
         <div class="wt-shop-empty-cart-actions">
             <a href="<?php echo esc_url( $shop_url ); ?>" class="wt-shop-btn-empty-cart wt-shop-btn-empty-primary">
                 <i class="bi bi-bag" aria-hidden="true"></i>
-                <?php esc_html_e( 'Continue shopping', 'webthinkershop' ); ?>
+                <?php esc_html_e( 'Continue shopping', 'ycona' ); ?>
             </a>
             <a href="<?php echo esc_url( $home_url ); ?>" class="wt-shop-btn-empty-cart wt-shop-btn-empty-outline">
                 <i class="bi bi-house" aria-hidden="true"></i>
-                <?php esc_html_e( 'Back to homepage', 'webthinkershop' ); ?>
+                <?php esc_html_e( 'Back to homepage', 'ycona' ); ?>
             </a>
         </div>
     </div>
@@ -68,7 +68,7 @@ $home_url = home_url( '/' );
         if ( ! empty( $suggested ) ) : ?>
             <section class="wt-shop-thankyou-also-like wt-shop-empty-cart-products">
                 <h2 class="wt-shop-thankyou-also-like-title">
-                    <?php esc_html_e( 'Discover something new', 'webthinkershop' ); ?>
+                    <?php esc_html_e( 'Discover something new', 'ycona' ); ?>
                 </h2>
                 <ul class="products columns-4">
                     <?php

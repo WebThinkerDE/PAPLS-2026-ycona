@@ -739,6 +739,8 @@ add_filter( 'block_type_metadata', 'wt_block_type_metadata_api3', 10, 1 );
 	require_once(get_stylesheet_directory() . '/wt-cpt/testimonials.php');
 	require_once(get_stylesheet_directory() . '/wt-cpt/cards.php');
     require_once(get_stylesheet_directory() . '/wt-cpt/slider.php');
+    require_once(get_stylesheet_directory() . '/template-parts/wt-login.php');
+    require_once(get_stylesheet_directory() . '/template-parts/wt-backend.php');
 
     if ( class_exists( 'WooCommerce' ) ) {
         /* Load from template (parent) theme so hooks work with or without child theme */

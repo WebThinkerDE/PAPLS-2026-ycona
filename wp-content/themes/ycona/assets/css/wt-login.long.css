@@ -1,0 +1,434 @@
+/*login-page*/
+
+/*login-page-vars*/
+body.login {
+    --wt-login-radius-sm: 4px;
+    --wt-login-radius-md: 6px;
+    --wt-login-radius-lg: 10px;
+}
+
+/*login-page-body*/
+body.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/*login-page-layout*/
+body.login div#login {
+    width: 100%;
+    max-width: 350px;
+}
+
+/*login-container*/
+#login {
+    background: var(--wt-backend-primary);
+    padding: 36px 32px;
+    border-radius: var(--wt-login-radius-lg);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/*login-logo*/
+#login h1,
+.login h1 {
+    margin: 0;
+    padding: 0 0 12px;
+}
+/*login-logo-img*/
+#login h1 a,
+.login h1 a {
+    background-image: url("../img/Yacona.png");
+    background-color: var(--wt-backend-primary);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+    display: block;
+    height: 90px;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    padding: 0;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+
+#login h1 a:focus,
+.login h1 a:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/*login-form*/
+#loginform,
+#lostpasswordform,
+#resetpassform {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0 0 16px;
+}
+
+/*login-labels*/
+#loginform label,
+#lostpasswordform label,
+#resetpassform label {
+    color: var(--wt-backend-text);
+}
+
+/*login-inputs*/
+#loginform input[type="text"],
+#loginform input[type="password"],
+#lostpasswordform input[type="text"],
+#lostpasswordform input[type="password"],
+#resetpassform input[type="text"],
+#resetpassform input[type="password"] {
+    color: var(--wt-backend-text);
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: var(--wt-login-radius-sm);
+    font-size: 16px;
+    padding: 8px 12px;
+}
+
+#loginform input[type="text"]::placeholder,
+#loginform input[type="password"]::placeholder,
+#lostpasswordform input[type="text"]::placeholder,
+#lostpasswordform input[type="password"]::placeholder,
+#resetpassform input[type="text"]::placeholder,
+#resetpassform input[type="password"]::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#loginform input[type="text"]:focus,
+#loginform input[type="password"]:focus,
+#lostpasswordform input[type="text"]:focus,
+#lostpasswordform input[type="password"]:focus,
+#resetpassform input[type="text"]:focus,
+#resetpassform input[type="password"]:focus {
+    border-color: var(--wt-backend-pimary-button);
+    box-shadow: 0 0 0 1px var(--wt-backend-pimary-button);
+    outline: none;
+}
+
+/*login-inputs-autofill*/
+#loginform input[type="text"]:-webkit-autofill,
+#loginform input[type="password"]:-webkit-autofill,
+#lostpasswordform input[type="text"]:-webkit-autofill,
+#lostpasswordform input[type="password"]:-webkit-autofill,
+#resetpassform input[type="text"]:-webkit-autofill,
+#resetpassform input[type="password"]:-webkit-autofill {
+    -webkit-text-fill-color: var(--wt-backend-text);
+    -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.12) inset;
+    box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.12) inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/*login-show-password*/
+.login .button.wp-hide-pw .dashicons {
+    color: var(--wt-backend-text);
+}
+
+.login .button.wp-hide-pw:focus {
+    border-color: var(--wt-backend-text);
+}
+
+/*login-remember*/
+#loginform .forgetmenot label {
+    color: var(--wt-backend-text);
+}
+
+/*login-submit*/
+#loginform #wp-submit,
+#lostpasswordform #wp-submit,
+#resetpassform #wp-submit,
+.login #wp-submit {
+    background: var(--wt-backend-pimary-button);
+    border: 2px solid var(--wt-backend-pimary-button);
+    color: var(--wt-backend-primary);
+    font-size: 14px;
+    font-weight: 600;
+    text-shadow: none;
+    box-shadow: none;
+    height: auto;
+    padding: 10px 18px;
+    border-radius: var(--wt-login-radius-sm);
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+#loginform #wp-submit:hover,
+#loginform #wp-submit:focus,
+#lostpasswordform #wp-submit:hover,
+#lostpasswordform #wp-submit:focus,
+#resetpassform #wp-submit:hover,
+#resetpassform #wp-submit:focus,
+.login #wp-submit:hover,
+.login #wp-submit:focus {
+    background: transparent;
+    border-color: var(--wt-backend-pimary-button);
+    color: var(--wt-backend-pimary-button);
+}
+
+/*login-links*/
+#login #nav,
+#login #backtoblog {
+    padding: 0;
+    margin: 0;
+}
+
+/*login-link-lost-password*/
+#login #nav a,
+.login #nav a {
+    display: inline-block;
+    color: var(--wt-backend-text) !important;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 6px 0;
+    border-bottom: 1px solid transparent;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+#login #nav a:hover,
+.login #nav a:hover {
+    color: var(--wt-backend-pimary-button) !important;
+    border-bottom-color: var(--wt-backend-pimary-button);
+}
+
+#login #nav a:focus,
+.login #nav a:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/*login-link-back-to-site*/
+#login #backtoblog a,
+.login #backtoblog a {
+    display: inline-block;
+    color: var(--wt-backend-primary) !important;
+    background: var(--wt-backend-pimary-button);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: var(--wt-login-radius-sm);
+    border: 2px solid var(--wt-backend-pimary-button);
+    margin-top: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+#login #backtoblog a:hover,
+.login #backtoblog a:hover {
+    background: transparent !important;
+    color: var(--wt-backend-pimary-button) !important;
+    border-color: var(--wt-backend-pimary-button);
+}
+
+#login #backtoblog a:focus,
+.login #backtoblog a:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/*login-message*/
+#login .message,
+#login .login-error,
+#login .notice,
+#login #login_error,
+#login #login-message {
+    margin: 0 0 20px;
+    padding: 12px 14px 12px 44px;
+    border-radius: var(--wt-login-radius-md);
+    border-left: 4px solid var(--wt-backend-pimary-button);
+    color: var(--wt-backend-text);
+    font-size: 14px;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+#login .notice p,
+#login #login_error p,
+#login #login-message p {
+    margin: 0;
+    color: inherit;
+}
+
+/*login-message-error*/
+#login #login_error,
+#login .notice-error {
+    border-left-color: #e74c3c;
+    font-weight: 500;
+    background: rgba(231, 76, 60, 0.15);
+}
+
+#login #login_error a,
+#login .notice-error a {
+    color: var(--wt-backend-pimary-button) !important;
+}
+
+#login #login_error a:hover,
+#login .notice-error a:hover {
+    color: #f5d00a !important;
+}
+
+/*login-message-info*/
+#login #login-message,
+#login .message,
+#login .notice-info {
+    border-left-color: var(--wt-backend-pimary-button);
+    font-weight: 500;
+    background: rgba(234, 196, 12, 0.12);
+}
+
+#login #login-message a,
+#login .message a,
+#login .notice-info a {
+    color: var(--wt-backend-pimary-button) !important;
+}
+
+#login #login-message a:hover,
+#login .message a:hover,
+#login .notice-info a:hover {
+    color: #f5d00a !important;
+}
+
+/*login-message-list*/
+#login #login_error ul,
+#login .notice-error ul {
+    margin: 0.5em 0 0 1em;
+    padding: 0;
+    list-style: disc;
+}
+
+#login #login_error li,
+#login .notice-error li {
+    margin-bottom: 0.25em;
+}
+
+#login #login_error li:last-child,
+#login .notice-error li:last-child {
+    margin-bottom: 0;
+}
+
+/*login-language-switcher*/
+body.login .language-switcher {
+    width: 100%;
+    max-width: 350px;
+    margin: 16px auto 0;
+    text-align: center;
+}
+
+body.login .language-switcher label {
+    display: inline-block;
+    margin: 0 0 6px;
+    color: var(--wt-backend-text);
+    font-size: 13px;
+}
+
+body.login .language-switcher label .dashicons {
+    display: none;
+}
+
+body.login .language-switcher select {
+    color: var(--wt-backend-text);
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: var(--wt-login-radius-sm);
+    padding: 6px 10px;
+    min-width: 140px;
+}
+
+body.login .language-switcher select:focus {
+    border-color: var(--wt-backend-pimary-button);
+    box-shadow: 0 0 0 1px var(--wt-backend-pimary-button);
+    outline: none;
+}
+
+body.login .language-switcher .button {
+    margin-left: 8px;
+    background: var(--wt-backend-pimary-button);
+    border: 2px solid var(--wt-backend-pimary-button);
+    color: var(--wt-backend-primary);
+    font-size: 13px;
+    font-weight: 600;
+    text-shadow: none;
+    box-shadow: none;
+    padding: 6px 14px;
+    border-radius: var(--wt-login-radius-sm);
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+body.login .language-switcher .button:hover,
+body.login .language-switcher .button:focus {
+    background: transparent;
+    border-color: var(--wt-backend-pimary-button);
+    color: var(--wt-backend-pimary-button);
+    outline: none;
+    box-shadow: none;
+}
+
+/*WPML login language switcher*/
+body.login .wpml-login-ls {
+    width: 100%;
+    max-width: 350px;
+    margin: 16px auto 0;
+    text-align: center;
+}
+
+body.login .wpml-login-ls form {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+body.login .wpml-login-ls label {
+    margin: 0;
+    color: var(--wt-backend-text);
+    font-size: 13px;
+}
+
+body.login .wpml-login-ls label .dashicons {
+    display: none;
+}
+
+body.login .wpml-login-ls select {
+    color: var(--wt-backend-primary);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: var(--wt-login-radius-sm);
+    padding: 6px 10px;
+    min-width: 140px;
+}
+
+body.login .wpml-login-ls select:focus {
+    border-color: var(--wt-backend-pimary-button);
+    box-shadow: 0 0 0 1px var(--wt-backend-pimary-button);
+    outline: none;
+}
+
+body.login .wpml-login-ls .button {
+    background: var(--wt-backend-pimary-button);
+    border-color: var(--wt-backend-pimary-button);
+    color: var(--wt-backend-primary);
+    font-size: 13px;
+    font-weight: 600;
+    text-shadow: none;
+    box-shadow: none;
+    padding: 6px 14px;
+    border-radius: var(--wt-login-radius-sm);
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+body.login .wpml-login-ls .button:hover,
+body.login .wpml-login-ls .button:focus {
+    background: var(--wt-backend-primary);
+    color: var(--wt-backend-pimary-button);
+    outline: none;
+    box-shadow: none;
+}

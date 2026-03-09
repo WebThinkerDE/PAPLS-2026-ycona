@@ -7,10 +7,14 @@
     --wt-primary: #1D8DBE;
     --wt-grey: gray;
     --wt-black: #000;
-
     --wt-dark-grey: #595959;
 
-    
+    /* Custom Backend colors */
+    --wt-backend-primary: #314c65;
+    --wt-backend-secondary: #5a9bcd;
+    --wt-backend-text: #ffffff;
+    --wt-backend-pimary-button: #eac40c;
+
     /* Fallback colors - will be overridden by dynamic-colors.css when available */
     --wt-shop-primary: #091057;
     --wt-shop-primary-dark: #05063F;
@@ -23,14 +27,14 @@
     --wt-shop-light-gray: #F7F7F8;
     --wt-shop-tertiary: #0077FF;
     --wt-shop-gradient-90: linear-gradient(0deg, #1326A1 0%, #05063F 50%, #091057 100%);
-    
+
     /* Legacy color support */
     --primary-color: #091057;
     --secondary-color: #FF6900;
     --accent-color: #0077FF;
     --background-color: #ffffff;
 
-    
+
     /* Modern Design System */
     --modern-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     --modern-shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
@@ -406,7 +410,7 @@ li {
     border-radius: 20px;
     padding: 2rem;
     margin-bottom: 2rem;
-    
+
     position: relative;
     overflow: hidden;
 }
@@ -477,7 +481,7 @@ li {
     backdrop-filter: var(--backdrop-blur);
     -webkit-backdrop-filter: var(--backdrop-blur);
     border-radius: 24px;
-    
+
     border: 1px solid var(--wt-shop-light-gray);
     overflow: hidden;
     position: relative;
@@ -534,7 +538,7 @@ li {
     align-items: center;
     justify-content: center;
     margin: 0 auto 1rem;
-   
+
 }
 
 .wt-sidebar-logo i {
@@ -621,7 +625,7 @@ li {
     background: var(--wt-shop-primary);
     color: var(--wt-shop-white);
 
-   
+
     border-right-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -634,7 +638,7 @@ li {
     background: var(--wt-shop-primary);
     color: var(--wt-shop-white);
 
-    
+
     border-right-color: rgba(255, 255, 255, 0.5);
 }
 
@@ -723,7 +727,7 @@ li {
     display: flex;
     align-items: center;
     justify-content: center;
-   
+
 }
 
 .wt-panel-icon i {
@@ -912,7 +916,7 @@ select.wt-input-field {
     max-height: 200px;
     object-fit: contain;
     border-radius: 12px;
-   
+
 }
 
 .wt-preview-placeholder {
@@ -949,7 +953,7 @@ select.wt-input-field {
     text-decoration: none;
     position: relative;
     overflow: hidden;
-   
+
     backdrop-filter: var(--backdrop-blur);
     -webkit-backdrop-filter: var(--backdrop-blur);
 }
@@ -981,8 +985,8 @@ select.wt-input-field {
 
 .wt-btn-primary:hover {
     background: var(--wt-shop-primary-hover);
-    
-    
+
+
 }
 
 .wt-btn-secondary {
@@ -994,8 +998,8 @@ select.wt-input-field {
 .wt-btn-secondary:hover {
     background: rgba(255, 255, 255, 0.2);
     color: var(--wt-shop-primary);
-    
-   
+
+
 }
 
 .wt-btn:active {
@@ -1060,7 +1064,7 @@ select.wt-input-field {
 .wt-btn-save:hover {
     background: var(--wt-shop-secondary-darker);
     transform: translateY(-3px);
-    
+
 }
 
 /* Info Card */
@@ -1260,8 +1264,8 @@ select.wt-input-field {
 }
 
 .wt-color-category:hover {
-    
-   
+
+
     border-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -1356,7 +1360,7 @@ select.wt-input-field {
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     background: var(--wt-shop-white);
-   
+
     position: relative;
     overflow: hidden;
     outline: none;
@@ -1376,14 +1380,14 @@ select.wt-input-field {
 
 .wt-color-picker:hover {
     border-color: var(--wt-shop-primary);
-    
-    
+
+
 }
 
 .wt-color-picker:focus {
     border-color: var(--wt-shop-primary);
     box-shadow: 0 0 0 4px rgba(9, 16, 87, 0.1), var(--modern-shadow-lg);
-    
+
 }
 
 /* Color Actions */
@@ -1453,8 +1457,8 @@ select.wt-input-field {
 }
 
 .wt-social-item:hover {
-    
-    
+
+
     border-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -1476,7 +1480,7 @@ select.wt-input-field {
     justify-content: center;
     font-size: 24px;
     color: white;
-   
+
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -1581,7 +1585,7 @@ select.wt-input-field {
     background: #1e1e1e;
     border-radius: 12px;
     overflow: hidden;
-   
+
     position: relative;
     z-index: 1;
     margin-bottom: 1.5rem;
@@ -1702,7 +1706,7 @@ select.wt-input-field {
     margin-right: 16px;
     vertical-align: middle;
     background: var(--wt-shop-white);
-   
+
     position: relative;
     overflow: hidden;
 }
@@ -1721,15 +1725,15 @@ select.wt-input-field {
 
 .design-colors input[type="color"]:hover {
     border-color: var(--wt-shop-primary);
-    
-    
+
+
 }
 
 .design-colors input[type="color"]:focus {
     outline: none;
     border-color: var(--wt-shop-primary);
     box-shadow: 0 0 0 4px rgba(9, 16, 87, 0.1), var(--modern-shadow-lg);
-    
+
 }
 
 .design-colors button {
@@ -1742,7 +1746,7 @@ select.wt-input-field {
     font-size: 14px;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-   
+
     margin: 20px 12px 0 0;
     position: relative;
     overflow: hidden;
@@ -1763,7 +1767,7 @@ select.wt-input-field {
 
 .design-colors button:hover {
     transform: translateY(-4px);
-    
+
 }
 
 .design-colors button:hover::before {
@@ -1771,7 +1775,7 @@ select.wt-input-field {
 }
 
 .design-colors button:active {
-    
+
     transition: all 0.1s ease;
 }
 
@@ -1787,7 +1791,7 @@ select.wt-input-field {
     min-height: 140px;
     background: var(--wt-shop-white);
     color: var(--wt-shop-black);
-   
+
     position: relative;
     overflow: hidden;
 }
@@ -1808,7 +1812,7 @@ select.wt-input-field {
     outline: none;
     border-color: var(--wt-shop-primary);
     box-shadow: 0 0 0 4px rgba(9, 16, 87, 0.1), var(--modern-shadow-lg);
-    
+
     background: var(--wt-shop-white);
 }
 
@@ -1819,7 +1823,7 @@ select.wt-input-field {
 .design-colors textarea:hover {
     border-color: var(--wt-shop-primary);
     transform: translateY(-1px);
-   
+
     background: var(--wt-shop-white);
 }
 
@@ -1924,7 +1928,7 @@ select.wt-input-field {
     font-size: 14px;
     font-weight: 700;
     color: var(--wt-shop-white);
-   
+
     position: relative;
     z-index: 1;
 }
@@ -1994,7 +1998,7 @@ select.wt-input-field {
 .wt-notification-close:hover {
     background: rgba(255, 255, 255, 0.3);
     color: var(--wt-shop-black);
-   
+
 }
 
 
@@ -2075,7 +2079,7 @@ div.body-options hr {
     background-image: url(//www.webthinker.de/static/webthinker-kompassrose.webp);
     background-size: contain;
     background-repeat: no-repeat;
-    
+
     background-position: center;
 
 
@@ -2178,7 +2182,7 @@ div.body-options hr {
     background: var(--solid-primary);
     color: var(--wt-shop-white);
 
-   
+
     border-right-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -2187,7 +2191,7 @@ div.body-options hr {
     color: var(--wt-shop-white);
     background: var(--solid-primary);
 
-    
+
     position: relative;
 }
 
@@ -2319,7 +2323,7 @@ div.body-options hr {
 
 .submit-options .button-primary:hover {
     background: var(--wt-shop-primary-hover);
-    
+
     box-shadow: 0 6px 16px rgba(9, 16, 87, 0.3);
 }
 
@@ -2344,7 +2348,7 @@ div.body-options hr {
     margin: 6px;
     position: relative;
     overflow: hidden;
-   
+
 }
 
 .button::before {
@@ -2361,8 +2365,8 @@ div.body-options hr {
 .button:hover {
     background: var(--solid-primary);
     color: var(--wt-shop-white);
-    
-    
+
+
     border-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -2378,7 +2382,7 @@ div.body-options hr {
 /* Image Preview Styling */
 .content-options img {
     border-radius: 16px;
-   
+
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border: 2px solid var(--wt-shop-light-gray);
     background: var(--wt-shop-white);
@@ -2402,7 +2406,7 @@ div.body-options hr {
 
 .content-options img:hover {
     transform: translateY(-4px);
-    
+
     border-color: var(--wt-shop-primary);
 }
 /* Responsive Design */
@@ -2411,16 +2415,16 @@ div.body-options hr {
         margin: 1rem;
         border-radius: 20px;
     }
-    
+
     .wt-options-sidebar {
         width: 240px;
     }
-    
+
     .wt-nav-item {
         padding: 0.875rem 1.25rem;
         font-size: 13px;
     }
-    
+
     .wt-color-grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 1.5rem;
@@ -2431,30 +2435,30 @@ div.body-options hr {
     .wt-options-body {
         padding: 1rem;
     }
-    
+
     .wt-options-layout {
         flex-direction: column;
     }
-    
+
     .wt-options-sidebar {
         width: 100%;
         border-right: none;
         border-bottom: 1px solid var(--wt-shop-light-gray);
     }
-    
+
     .wt-sidebar-nav {
         display: flex;
         overflow-x: auto;
         padding: 1rem;
         gap: 0.5rem;
     }
-    
+
     .wt-nav-list {
         display: flex;
         gap: 0.5rem;
         min-width: max-content;
     }
-    
+
     .wt-nav-item {
         white-space: nowrap;
         border-radius: 12px;
@@ -2464,90 +2468,90 @@ div.body-options hr {
         min-width: 120px;
         justify-content: center;
     }
-    
+
     .wt-nav-item:hover,
     .wt-nav-item.active {
         border-right: none;
         border-bottom-color: rgba(255, 255, 255, 0.3);
     }
-    
+
     .wt-nav-item.active::after {
         display: none;
     }
-    
+
     .wt-panel-content {
         padding: 1.5rem;
         max-height: none;
     }
-    
+
     .wt-field-group {
         padding: 1.25rem;
     }
-    
+
     .wt-footer-content {
         flex-direction: column;
         gap: 1rem;
         text-align: center;
     }
-    
+
     .wt-footer-actions {
         width: 100%;
         justify-content: center;
     }
-    
+
     /* Color Grid Mobile */
     .wt-color-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     .wt-color-items {
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
         gap: 0.75rem;
     }
-    
+
     .wt-color-actions {
         flex-direction: column;
         align-items: center;
     }
-    
-    
+
+
     .wt-code-actions {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .wt-code-textarea {
         min-height: 200px;
         font-size: 12px;
     }
-    
+
     /* Social Media Mobile */
     .wt-social-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
-    
+
     .wt-social-item {
         padding: 1rem;
     }
-    
+
     .wt-social-header {
         gap: 0.75rem;
     }
-    
+
     .wt-social-icon {
         width: 40px;
         height: 40px;
         font-size: 20px;
     }
-    
+
     .wt-social-input {
         flex-direction: column;
         gap: 0.5rem;
         align-items: stretch;
     }
-    
+
     .wt-social-actions {
         flex-direction: column;
         align-items: center;
@@ -2559,48 +2563,48 @@ div.body-options hr {
     .wt-options-body {
         padding: 0.5rem;
     }
-    
+
     .wt-options-container {
         margin: 0;
         border-radius: 16px;
     }
-    
+
     .wt-header-content {
         flex-direction: column;
         text-align: center;
         gap: 1rem;
     }
-    
+
     .wt-header-title {
         font-size: 1.5rem;
     }
-    
+
     .wt-panel-header {
         padding: 1.5rem;
     }
-    
+
     .wt-panel-header-content {
         flex-direction: column;
         text-align: center;
         gap: 0.75rem;
     }
-    
+
     .wt-panel-content {
         padding: 1rem;
     }
-    
+
     .wt-field-group {
         padding: 1rem;
     }
-    
+
     .wt-upload-actions {
         flex-direction: column;
     }
-    
+
     .wt-btn {
         justify-content: center;
     }
-    
+
     .wt-footer-actions {
         flex-direction: column;
     }
@@ -2611,11 +2615,11 @@ div.body-options hr {
     .wt-nav-item {
         border-width: 2px;
     }
-    
+
     .wt-input-field {
         border-width: 3px;
     }
-    
+
     .wt-btn {
         border-width: 2px;
     }
@@ -2629,7 +2633,7 @@ div.body-options hr {
     .wt-preview-image {
         transition: none;
     }
-    
+
     .wt-nav-item::before,
     .wt-btn::before,
     .wt-input-field::before {
@@ -2642,6 +2646,9 @@ div.body-options hr {
     background: #173b8624;
 }
 
+.auto-fold .interface-interface-skeleton {
+    margin-left: 25px;
+}
 /* cpt backend file column */
 form#posts-filter table.table-view-list td.tab_shortcode {
     vertical-align: middle;
@@ -2674,3 +2681,436 @@ form#posts-filter table.table-view-list td.employee_shortcode  div {
 .block-editor__container img {
     background: var(--wt-shop-light-gray);
 }
+
+/* Start Backend-style */
+
+/* body: font and page background (matches XD light blue-gray) */
+body.wp-admin.wt-backend-styled {
+    font-family: var(--font-family-default), 'Ubuntu', sans-serif;
+    background: #e8edf2;
+}
+
+/* ========== Admin sidebar (#adminmenu) ========== */
+
+/* sidebar container: full width; main menu + submenu use primary background */
+#adminmenu,
+.wt-backend-styled #adminmenu ul.wp-submenu {
+    width: 100%;
+}
+.wt-backend-styled #adminmenuback,
+.wt-backend-styled #adminmenuwrap,
+.wt-backend-styled #adminmenu {
+    background: var(--wt-backend-primary) !important;
+}
+.wt-backend-styled #adminmenuwrap {
+    width: 180px !important;
+}
+
+/* sidebar: all links white,  hover = yellow left bar */
+.wt-backend-styled #adminmenu a {
+    color: var(--wt-backend-text) !important;
+    text-decoration: none !important;
+}
+.wt-backend-styled #adminmenu a:hover {
+    box-shadow: inset 4px 0 0 0 var(--wt-backend-pimary-button) !important;
+}
+
+/* sidebar: dashicons / menu icons use white (slightly dimmed via rgba in next block if needed) */
+.wt-backend-styled #adminmenu .wp-menu-image::before,
+.wt-backend-styled #adminmenu .dashicons,
+.wt-backend-styled #adminmenu .dashicons-before::before {
+    color: var(--wt-backend-text) !important;
+}
+
+/* sidebar: SVG menu icons (e.g. custom post types , woocommerce) forced to white via filter */
+.wt-backend-styled #adminmenu div.wp-menu-image.svg,
+body.wt-backend-styled #adminmenu div.wp-menu-image.svg {
+    color: var(--wt-backend-text) !important;
+    filter: brightness(0) invert(1) !important;
+}
+.wt-backend-styled #adminmenu div.wp-menu-image.svg img,
+.wt-backend-styled #adminmenu div.wp-menu-image.svg svg,
+body.wt-backend-styled #adminmenu div.wp-menu-image.svg img,
+body.wt-backend-styled #adminmenu div.wp-menu-image.svg svg {
+    filter: brightness(0) invert(1) !important;
+    opacity: 0.9 !important;
+}
+.wt-backend-styled #adminmenu li.current div.wp-menu-image.svg img,
+.wt-backend-styled #adminmenu li.current div.wp-menu-image.svg svg,
+.wt-backend-styled #adminmenu li.wp-has-current-submenu div.wp-menu-image.svg img,
+.wt-backend-styled #adminmenu li.wp-has-current-submenu div.wp-menu-image.svg svg {
+    filter: brightness(0) invert(1) !important;
+    opacity: 1 !important;
+}
+
+/* sidebar: list item borders and hover transition */
+.wt-backend-styled #adminmenu li {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    transition: background-color 0.18s ease-out;
+}
+.wt-backend-styled #adminmenu li a {
+    transition: box-shadow 0.18s ease-out, color 0.15s ease-out;
+}
+
+/* sidebar: current/active item = yellow background, dark text (primary) */
+.wt-backend-styled #adminmenu li.current,
+.wt-backend-styled #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu {
+    background: var(--wt-backend-pimary-button) !important;
+    color: var(--wt-backend-primary) !important;
+}
+.wt-backend-styled #adminmenu li.current a,
+.wt-backend-styled #adminmenu li.wp-has-current-submenu a.wp-has-current-submenu {
+    color: var(--wt-backend-text) !important;
+    background: var(--wt-backend-pimary-button) !important;
+}
+
+th .comment-grey-bubble:before,
+.wt-backend-styled #adminmenu li.current .dashicons,
+.wt-backend-styled #adminmenu li.current .wp-menu-image::before,
+.wt-backend-styled #adminmenu li.wp-has-current-submenu .dashicons,
+.wt-backend-styled #adminmenu li.wp-has-current-submenu .wp-menu-image::before {
+    color: var(--wt-backend-text) !important;
+}
+
+/* sidebar: hover state = secondary (light blue); override WP core black on link */
+.wt-backend-styled #adminmenu li:hover,
+.wt-backend-styled #adminmenu li.opensub:hover {
+    background: var(--wt-backend-secondary) !important;
+}
+.wt-backend-styled #adminmenu li.menu-top:hover,
+#adminmenu li.menu-top:hover,
+body.wt-backend-styled #adminmenu li.menu-top:hover a {
+    background: var(--wt-backend-secondary) !important;
+}
+.wt-backend-styled #adminmenu li:hover a {
+    color: var(--wt-backend-text) !important;
+}
+
+/* sidebar: submenu container and links use secondary; smooth transition */
+.wt-backend-styled #adminmenu ul.wp-submenu {
+    background: var(--wt-backend-secondary) !important;
+}
+.wt-backend-styled #adminmenu .wp-submenu a {
+    color: var(--wt-backend-text) !important;
+    transition: background-color 0.18s ease-out, color 0.15s ease-out;
+}
+.wt-backend-styled #adminmenu .wp-submenu a:hover {
+    color: var(--wt-backend-text) !important;
+}
+
+/* sidebar: hide WP menu arrow (triangle) on parent and first submenu item */
+#adminmenu .wp-menu-arrow,
+#adminmenu .wp-submenu .wp-menu-arrow,
+#adminmenu .wp-submenu li .wp-menu-arrow,
+#adminmenu li.menu-top .wp-menu-arrow,
+#adminmenu li.wp-has-submenu .wp-menu-arrow,
+.wt-backend-styled #adminmenu .wp-menu-arrow,
+.wt-backend-styled #adminmenu .wp-submenu .wp-menu-arrow,
+body.wt-backend-styled #adminmenu .wp-menu-arrow,
+body.wt-backend-styled #adminmenu .wp-submenu .wp-menu-arrow {
+    display: none !important;
+    visibility: hidden !important;
+    background: none !important;
+    background-image: none !important;
+}
+.wt-backend-styled #adminmenu .wp-submenu .wp-menu-image,
+.wt-backend-styled #adminmenu .wp-submenu .wp-menu-image::before,
+.wt-backend-styled #adminmenu .wp-submenu .wp-menu-image::after,
+.wt-backend-styled #adminmenu .wp-submenu li a::before,
+.wt-backend-styled #adminmenu .wp-submenu li a::after,
+.wt-backend-styled #adminmenu .wp-submenu .dashicons,
+.wt-backend-styled #adminmenu .wp-submenu .dashicons-before::before,
+body.wt-backend-styled #adminmenu .wp-submenu li a::before,
+body.wt-backend-styled #adminmenu .wp-submenu li a::after,
+body.wt-backend-styled #adminmenu .wp-submenu .wp-menu-image,
+body.wt-backend-styled #adminmenu .wp-submenu .wp-menu-image::before,
+body.wt-backend-styled #adminmenu .wp-submenu .wp-menu-image::after {
+    display: none !important;
+    content: none !important;
+    visibility: hidden !important;
+}
+.wt-backend-styled #adminmenu .wp-submenu li:first-child a::before,
+.wt-backend-styled #adminmenu .wp-submenu li:first-child a::after,
+.wt-backend-styled #adminmenu .wp-submenu li:first-child .wp-menu-image,
+body.wt-backend-styled #adminmenu .wp-submenu li:first-child a::before,
+body.wt-backend-styled #adminmenu .wp-submenu li:first-child a::after {
+    display: none !important;
+    content: none !important;
+    visibility: hidden !important;
+}
+#adminmenu .wp-has-current-submenu .wp-submenu {
+    padding: 0;
+}
+#adminmenu li.opensub ul.wp-submenu {
+    left: 180px !important;
+}
+
+/* ========== Admin top bar (#wpadminbar) ========== */
+
+/* bar background and top-level items use primary; links white */
+.wt-backend-styled #wpadminbar,
+body.wt-backend-styled #wpadminbar {
+    background: var(--wt-backend-primary) !important;
+}
+.wt-backend-styled #wpadminbar .ab-top-menu > li > .ab-item,
+body.wt-backend-styled #wpadminbar .ab-top-menu > li > .ab-item {
+    background: var(--wt-backend-primary) !important;
+    color: var(--wt-backend-text) !important;
+}
+.wt-backend-styled #wpadminbar a,
+.wt-backend-styled #wpadminbar .ab-item,
+body.wt-backend-styled #wpadminbar a,
+body.wt-backend-styled #wpadminbar .ab-item {
+    color: var(--wt-backend-text) !important;
+    transition: background-color 0.18s ease-out, color 0.15s ease-out;
+}
+
+/* bar: dropdown submenu same primary background and white text */
+.wt-backend-styled #wpadminbar .ab-submenu,
+body.wt-backend-styled #wpadminbar .ab-submenu {
+    background: var(--wt-backend-primary) !important;
+}
+.wt-backend-styled #wpadminbar .ab-submenu .ab-item,
+body.wt-backend-styled #wpadminbar .ab-submenu .ab-item {
+    color: var(--wt-backend-text) !important;
+}
+
+/* bar: hover = yellow tint; text stays white */
+.wt-backend-styled #wpadminbar li:hover > .ab-item,
+.wt-backend-styled #wpadminbar li.hover > .ab-item,
+body.wt-backend-styled #wpadminbar li:hover > .ab-item,
+body.wt-backend-styled #wpadminbar li.hover > .ab-item {
+    background: rgba(234, 196, 12, 0.25) !important;
+    color: var(--wt-backend-text) !important;
+}
+
+/* bar: YCONA logo in site-name (size and alignment) */
+.wt-backend-styled #wpadminbar .wt-adminbar-logo-img,
+body.wt-backend-styled #wpadminbar .wt-adminbar-logo-img {
+    display: block;
+    max-height: 30px;
+    width: auto;
+    max-width: 100px;
+    vertical-align: middle;
+}
+.wt-backend-styled #wpadminbar #wp-admin-bar-site-name .ab-item,
+body.wt-backend-styled #wpadminbar #wp-admin-bar-site-name .ab-item {
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+}
+body.wt-backend-styled #wpadminbar #wp-admin-bar-site-name .ab-item::before {
+    display: none !important;
+}
+
+/* bar: user avatar and display name next to it */
+.wt-backend-styled #wpadminbar .wt-adminbar-avatar,
+body.wt-backend-styled #wpadminbar .wt-adminbar-avatar {
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+/*account-pannel*/
+#wpadminbar #wp-admin-bar-my-account.with-avatar>a img{
+    border-radius: 50%;
+    border-color:var(--wt-backend-text) !important;
+    margin-top: 5px;
+}
+.wt-backend-styled #wpadminbar ul.ab-top-secondary li.menupop a.ab-item{
+    display:flex !important;
+    flex-direction:row-reverse;
+    justify-content:space-between;
+    gap:10px;
+    align-content:center
+}
+#wp-admin-bar-user-info .avatar{
+    border-radius: 50%;
+    border-color:var(--wt-backend-text) !important;
+    margin-bottom: 5px;
+}
+#wpadminbar #wp-admin-bar-user-actions.ab-submenu {
+    padding: 6px 0 20px !important;
+}
+#wpadminbar #wp-admin-bar-user-actions.ab-submenu a span:first-of-type{
+    display: none !important;
+}
+/* ========== Content area (#wpcontent, .wrap, postboxes) ========== */
+
+.wt-backend-styled #wpcontent,
+.wt-backend-styled #wpbody-content {
+    background: #e8edf2 !important;
+}
+.wt-backend-styled .wrap {
+    padding: 12px 20px 20px;
+}
+.wt-backend-styled .postbox,
+.wt-backend-styled .meta-box-sortables .postbox {
+    background: var(--wt-backend-text);
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e0e5e9;
+}
+.wt-backend-styled .wrap h1,
+.wt-backend-styled .wrap .wp-heading-inline {
+    font-weight: 700;
+    color: var(--wt-backend-primary);
+    font-size: 1.5rem;
+}
+
+/* Form elements (inputs, focus, upload button) */
+
+.wt-backend-styled input[type="text"],
+.wt-backend-styled input[type="email"],
+.wt-backend-styled input[type="url"],
+.wt-backend-styled input[type="number"],
+.wt-backend-styled input[type="search"],
+.wt-backend-styled textarea,
+.wt-backend-styled select {
+    border-radius: 8px;
+    border: 1px solid #cfd8e0;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.wt-backend-styled input:focus,
+.wt-backend-styled textarea:focus,
+.wt-backend-styled select:focus {
+    border-color: var(--wt-backend-secondary);
+    box-shadow: 0 0 0 2px rgba(90, 155, 205, 0.2);
+    outline: none;
+}
+.wt-backend-styled .button.button-large.upload_attachment_button,
+.wt-backend-styled input[type="button"].upload_attachment_button {
+    background: var(--wt-backend-pimary-button) !important;
+    color: var(--wt-backend-primary) !important;
+    border-color: var(--wt-backend-pimary-button);
+}
+
+/* Tables (list tables: header secondary, rows white, hover tint) */
+
+.wt-backend-styled .wp-list-table thead th,
+.wt-backend-styled .wp-list-table thead td {
+    background: var(--wt-backend-secondary) !important;
+    color: var(--wt-backend-text) !important;
+    border-color: rgba(255, 255, 255, 0.2);
+    font-weight: 600;
+}
+.wt-backend-styled .wp-list-table thead th a {
+    color: var(--wt-backend-text) !important;
+}
+.wt-backend-styled .wp-list-table tbody tr {
+    background: var(--wt-backend-text);
+    border-bottom: 1px solid #e8edf2;
+}
+.wt-backend-styled .wp-list-table tbody tr:hover {
+    background: rgba(90, 155, 205, 0.06);
+}
+.wt-backend-styled .wp-list-table tbody tr:nth-child(even) {
+    background: #fafbfc;
+}
+.wt-backend-styled .wp-list-table tbody tr:nth-child(even):hover {
+    background: rgba(90, 155, 205, 0.08);
+}
+
+/* Buttons (primary, CTA yellow, secondary outline) */
+
+.wt-backend-styled .button {
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+.wt-backend-styled .button-primary,
+.wt-backend-styled .wp-core-ui .button-primary {
+    background: var(--wt-backend-primary) !important;
+    color: var(--wt-backend-text) !important;
+    border-radius: 8px;
+    border: none;
+    padding: 8px 16px;
+    transition: opacity 0.2s;
+}
+.wt-backend-styled .button-primary:hover,
+.wt-backend-styled .wp-core-ui .button-primary:hover {
+    opacity: 0.9;
+}
+.wt-backend-styled .button.action-cta,
+.wt-backend-styled .button.wt-cta-yellow {
+    background: var(--wt-backend-pimary-button) !important;
+    color: var(--wt-backend-primary) !important;
+    border-radius: 8px;
+    border: none;
+}
+.wt-backend-styled .button.button-secondary,
+.wt-backend-styled .wp-core-ui .button-secondary {
+    border: 1px solid #cfd8e0;
+    background: transparent;
+    color: #333;
+    border-radius: 8px;
+    transition: border-color 0.2s, background 0.2s;
+}
+.wt-backend-styled .button.button-secondary:hover {
+    border-color: var(--wt-backend-secondary);
+    background: rgba(90, 155, 205, 0.06);
+}
+
+/* Typography (headings primary, labels bold, descriptions gray) */
+
+.wt-backend-styled h1,
+.wt-backend-styled h2,
+.wt-backend-styled h3 {
+    font-weight: 700;
+    color: var(--wt-backend-primary);
+}
+.wt-backend-styled .form-table th {
+    color: #333;
+    font-size: 14px;
+}
+.wt-backend-styled label,
+.wt-backend-styled .form-table th label {
+    font-weight: 600;
+    font-size: 13px;
+}
+.wt-backend-styled .description,
+.wt-backend-styled .howto {
+    color: #666;
+    font-size: 13px;
+}
+
+/* Notices (rounded, left border by type) */
+
+.wt-backend-styled .notice,
+.wt-backend-styled .updated,
+.wt-backend-styled .error {
+    border-radius: 8px;
+    border-left-width: 4px;
+    border-left-style: solid;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.wt-backend-styled .notice-success { border-left-color: #00a32a; }
+.wt-backend-styled .notice-info { border-left-color: var(--wt-backend-secondary); }
+.wt-backend-styled .notice-warning { border-left-color: var(--wt-backend-pimary-button); }
+.wt-backend-styled .notice-error,
+.wt-backend-styled .error { border-left-color: #d63638; }
+.wt-backend-styled .notice-dismiss {
+    border-radius: 50%;
+}
+
+/* Responsive (narrow: less padding; small: fixed admin bar) */
+
+@media screen and (max-width: 782px) {
+    .wt-backend-styled #wpcontent {
+        padding-left: 0;
+    }
+    .wt-backend-styled .wrap {
+        padding: 10px 12px;
+    }
+}
+@media screen and (max-width: 960px) {
+    .wt-backend-styled #wpadminbar,
+    body.wt-backend-styled #wpadminbar {
+        position: fixed;
+    }
+}
+/*footer-style*/
+#wpfooter{
+    padding: 10px 45px !important;
+}
+/* End Backend-style */
